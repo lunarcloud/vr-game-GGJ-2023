@@ -16,6 +16,9 @@ export(int, "Off", "On", "No Change") var visibility_on_exit : int = Visibility.
 
 export var only_once := true
 
+export var enabled := true
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if !computer_ai_path:
@@ -37,8 +40,10 @@ func _ready():
 
 
 func _on_body_entered(_body) -> void:
-	computer_ai.set_face_visible(visibility_on_enter == Visibility.On)
+	if enabled:
+		computer_ai.set_face_visible(visibility_on_enter == Visibility.On)
 
 
 func _on_body_exited(_body) -> void:
-	computer_ai.set_face_visible(visibility_on_exit == Visibility.On)
+	if enabled:
+		computer_ai.set_face_visible(visibility_on_exit == Visibility.On)

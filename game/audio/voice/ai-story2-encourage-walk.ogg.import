@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ai-story2-encourage-walk.ogg-26fbf905cff3cc157d18aa3f58384678.oggstr"
+
+[deps]
+
+source_file="res://game/audio/voice/ai-story2-encourage-walk.ogg"
+dest_files=[ "res://.import/ai-story2-encourage-walk.ogg-26fbf905cff3cc157d18aa3f58384678.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

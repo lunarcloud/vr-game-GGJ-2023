@@ -7,7 +7,7 @@ onready var audio : AudioStreamPlayer3D = $Audio
 onready var face : AnimatedSprite3D = $Face
 
 # Set this if you want the scene to start with the computer talking
-export var current_audio : AudioStream setget _set_audio, _get_audio
+var current_audio : AudioStream setget _set_audio, _get_audio
 
 export(Array, AudioStream) var audio_streams : Array
 

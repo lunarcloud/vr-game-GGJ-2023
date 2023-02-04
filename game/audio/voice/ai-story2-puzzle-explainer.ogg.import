@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ai-story2-puzzle-explainer.ogg-34a472c29f6e8bcc62d704a4a166b50b.oggstr"
+
+[deps]
+
+source_file="res://game/audio/voice/ai-story2-puzzle-explainer.ogg"
+dest_files=[ "res://.import/ai-story2-puzzle-explainer.ogg-34a472c29f6e8bcc62d704a4a166b50b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

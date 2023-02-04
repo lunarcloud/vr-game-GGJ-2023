@@ -14,6 +14,9 @@ export var voice_line_on_exit : int = 0
 
 export var only_once := true
 
+export var enabled := true
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if !computer_ai_path:
@@ -33,8 +36,10 @@ func _ready():
 
 
 func _on_body_entered(_body) -> void:
-	computer_ai.play_line(voice_line_on_enter, face_on_enter)
+	if enabled:
+		computer_ai.play_line(voice_line_on_enter, face_on_enter)
 
 
 func _on_body_exited(_body) -> void:
-	computer_ai.play_line(voice_line_on_exit, ComputerAiNpc.Faces.NoChange)
+	if enabled:
+		computer_ai.play_line(voice_line_on_exit, ComputerAiNpc.Faces.NoChange)
