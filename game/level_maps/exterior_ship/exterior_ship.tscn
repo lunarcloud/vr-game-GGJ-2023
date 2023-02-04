@@ -1,3 +1,237 @@
-[gd_scene format=2]
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/bodies/Door_Single.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/meshlibrary/scifi_modular.meshlib" type="MeshLibrary" id=2]
+[ext_resource path="res://game/level_maps/exterior_ship/parts/shaft.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/level_maps/exterior_ship/parts/top.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/bodies/Props_ComputerSmall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/level_maps/exterior_ship/parts/reactor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/level_maps/exterior_ship/parts/hull.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/level_maps/exterior_ship/parts/barrier.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game/level_maps/exterior_ship/parts/ramp.tscn" type="PackedScene" id=9]
+[ext_resource path="res://game/level_maps/exterior_ship/parts/bridge.tscn" type="PackedScene" id=10]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/details/Details_Output.tscn" type="PackedScene" id=11]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/bodies/Props_ChestBottom.tscn" type="PackedScene" id=12]
+[ext_resource path="res://game/level_maps/exterior_ship/parts/array.tscn" type="PackedScene" id=13]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 15, 77, 22 )
 
 [node name="ExteriorShip" type="Spatial"]
+
+[node name="Gravity" type="Spatial" parent="."]
+
+[node name="Gravity1" type="Area" parent="Gravity"]
+collision_layer = 524292
+collision_mask = 0
+space_override = 3
+gravity_vec = Vector3( -1, 0, 0 )
+gravity = 3.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Gravity/Gravity1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Gravity2" type="Area" parent="Gravity"]
+transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0, 0, 0 )
+collision_layer = 524292
+collision_mask = 0
+space_override = 3
+gravity_vec = Vector3( -0.5, 0, 0.866 )
+gravity = 3.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Gravity/Gravity2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Gravity3" type="Area" parent="Gravity"]
+transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0, 0, 0 )
+collision_layer = 524292
+collision_mask = 0
+space_override = 3
+gravity_vec = Vector3( 0.5, 0, 0.866 )
+gravity = 3.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Gravity/Gravity3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Gravity4" type="Area" parent="Gravity"]
+transform = Transform( -1, 0, -1.49012e-07, 0, 1, 0, 1.49012e-07, 0, -1, 0, 0, 0 )
+collision_layer = 524292
+collision_mask = 0
+space_override = 3
+gravity_vec = Vector3( 1, 0, 0 )
+gravity = 3.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Gravity/Gravity4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Gravity5" type="Area" parent="Gravity"]
+transform = Transform( -0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, -0.5, 0, 0, 0 )
+collision_layer = 524292
+collision_mask = 0
+space_override = 3
+gravity_vec = Vector3( 0.5, 0, -0.866 )
+gravity = 3.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Gravity/Gravity5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Gravity6" type="Area" parent="Gravity"]
+transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, 0, 0 )
+collision_layer = 524292
+collision_mask = 0
+space_override = 3
+gravity_vec = Vector3( -0.5, 0, -0.866 )
+gravity = 3.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Gravity/Gravity6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Core" type="Spatial" parent="."]
+
+[node name="Hull" parent="Core" instance=ExtResource( 7 )]
+
+[node name="Barrier" parent="Core" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 77, 0 )
+
+[node name="Top" parent="Core" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 73, 0 )
+
+[node name="TopGridMap" type="GridMap" parent="Core"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 69, 0 )
+mesh_library = ExtResource( 2 )
+cell_size = Vector3( 1, 2, 1 )
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PoolIntArray( 2, 0, 1048580, 3, 1, 29, 5, 1, 29, 131075, 1, 131116, 131077, 1, 131116, 4, 2, 655376, 6, 2, 22, 2, 65534, 1048598, 4, 65534, 16, 6, 65534, 22, 3, 65535, 29, 5, 65535, 29, 131075, 65535, 131116, 131077, 65535, 131116 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 2, 0 )
+}
+
+[node name="TopObjects" type="Spatial" parent="Core"]
+
+[node name="Door_Single" parent="Core/TopObjects" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.3, 69, 0 )
+
+[node name="Props_ComputerSmall" parent="Core/TopObjects" instance=ExtResource( 5 )]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 7, 69, -2 )
+
+[node name="Shaft" parent="Core" instance=ExtResource( 3 )]
+
+[node name="Reactor" parent="Core" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -90, 0 )
+
+[node name="BottomGridMap" type="GridMap" parent="Core"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 8.66, -75, 0 )
+mesh_library = ExtResource( 2 )
+use_in_baked_light = true
+cell_size = Vector3( 1, 2, 1 )
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PoolIntArray( 65532, 0, 1441809, 196604, 0, 1441809, 65532, 2, 22, 65534, 2, 17, 196604, 2, 22, 196606, 2, 17, 65532, 65534, 22, 65534, 65534, 655377, 196604, 65534, 22, 196606, 65534, 655377 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 2, 0 )
+}
+
+[node name="BottomObjects" type="Spatial" parent="Core"]
+
+[node name="Props_ChestBottom" parent="Core/BottomObjects" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, 1, -1, 4.37114e-08, -4.37114e-08, -8.60025, -74.5, 0 )
+
+[node name="Details_Output" parent="Core/BottomObjects" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 10.3, -71.2004, 0 )
+
+[node name="Details_Output2" parent="Core/BottomObjects" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 10.3, -73, -1.8 )
+
+[node name="Details_Output3" parent="Core/BottomObjects" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3, -73, 1.8 )
+
+[node name="Arrays" type="Spatial" parent="Core"]
+
+[node name="Array1" parent="Core/Arrays" instance=ExtResource( 13 )]
+transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 10, 0 )
+
+[node name="Array4" parent="Core/Arrays" instance=ExtResource( 13 )]
+transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, -30, 0 )
+
+[node name="Array2" parent="Core/Arrays" instance=ExtResource( 13 )]
+transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 0, 30, 0 )
+
+[node name="Array3" parent="Core/Arrays" instance=ExtResource( 13 )]
+transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 0, -10, 0 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.965926, 0, 0.258819, -0.0669873, 0.965926, 0.25, -0.25, -0.258819, 0.933013, 0, 0, 24 )
+
+[node name="Maze" type="Spatial" parent="."]
+
+[node name="Barrier1" parent="Maze" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0 )
+
+[node name="Ramp1" parent="Maze" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, 53, 0 )
+
+[node name="Ramp2" parent="Maze" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 47, 0 )
+
+[node name="Bridge1" parent="Maze" instance=ExtResource( 10 )]
+transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0, 40, 0 )
+
+[node name="Bridge2" parent="Maze" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0 )
+
+[node name="Barrier2" parent="Maze" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0 )
+
+[node name="Ramp3" parent="Maze" instance=ExtResource( 9 )]
+transform = Transform( -1, 7.64274e-15, 8.74228e-08, 0, -1, 8.74228e-08, 8.74228e-08, 8.74228e-08, 1, 0, 27, 0 )
+
+[node name="Barrier3" parent="Maze" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
+
+[node name="Ramp4" parent="Maze" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 7, 0 )
+
+[node name="Bridge3" parent="Maze" instance=ExtResource( 10 )]
+transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, 0, 0 )
+
+[node name="Bridge4" parent="Maze" instance=ExtResource( 10 )]
+transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, 0, 0 )
+
+[node name="Ramp5" parent="Maze" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 7.57103e-08, 0.866025, 0, -1, 8.74228e-08, 0.866025, -4.37114e-08, -0.5, 0, -13, 0 )
+
+[node name="Barrier4" parent="Maze" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0 )
+
+[node name="Ramp6" parent="Maze" instance=ExtResource( 9 )]
+transform = Transform( -1, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, -1, 0, -27, 0 )
+
+[node name="Barrier5" parent="Maze" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -30, 0 )
+
+[node name="Ramp7" parent="Maze" instance=ExtResource( 9 )]
+transform = Transform( -0.5, 7.57103e-08, 0.866025, 0, -1, 8.74228e-08, 0.866025, 4.37114e-08, 0.5, 0, -33, 0 )
+
+[node name="Bridge5" parent="Maze" instance=ExtResource( 10 )]
+transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, -40, 0 )
+
+[node name="Barrier6" parent="Maze" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50, 0 )
+
+[node name="Ramp8" parent="Maze" instance=ExtResource( 9 )]
+transform = Transform( -0.5, -7.57104e-08, -0.866026, 0, -1, 8.74228e-08, -0.866026, 4.37114e-08, 0.5, 0, -53, 0 )
