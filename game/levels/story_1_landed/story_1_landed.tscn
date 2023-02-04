@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://game/levels/level_base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/level_maps/dock_bay/dock_bay.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/environments/spacestation_interior_env.tres" type="Environment" id=3]
+
+[node name="Story1Landed" instance=ExtResource( 1 )]
+environment = ExtResource( 3 )
+
+[node name="DockingBay" parent="." index="1" instance=ExtResource( 2 )]

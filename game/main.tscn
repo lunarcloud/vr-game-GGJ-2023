@@ -5,7 +5,7 @@
 [ext_resource path="res://game/environments/loading_environment.tres" type="Environment" id=3]
 
 [node name="Main" instance=ExtResource( 1 )]
-main_scene = "res://game/levels/main_level/main_level.tscn"
+main_scene = "res://game/levels/story_1_landed/story_1_landed.tscn"
 
 [node name="WorldEnvironment" parent="." index="1"]
 environment = ExtResource( 3 )
