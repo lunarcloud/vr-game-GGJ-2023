@@ -11,5 +11,5 @@ dest_files=[ "res://.import/ai-good-luck.ogg-626cee9cbf3de17c555a5d44e0ef3ac8.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

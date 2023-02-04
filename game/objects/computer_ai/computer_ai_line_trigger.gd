@@ -6,7 +6,7 @@ var computer_ai : ComputerAiNpc
 
 export var voice_line_on_enter : int = 0
 
-export(int, "Off", "Idle", "Scream", "Talk", "NoChange") var face_on_enter : int = ComputerAiNpc.Faces.Talk
+export(int, "Off", "Idle", "Scream", "Talk", "Humming", "NoChange") var face_on_enter : int = ComputerAiNpc.Faces.Talk
 
 export var use_on_exit_line := false
 

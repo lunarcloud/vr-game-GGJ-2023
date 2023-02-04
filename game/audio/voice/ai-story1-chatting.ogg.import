@@ -11,5 +11,5 @@ dest_files=[ "res://.import/ai-story1-chatting.ogg-0d39596bd0bda269d1c664f43a82b
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

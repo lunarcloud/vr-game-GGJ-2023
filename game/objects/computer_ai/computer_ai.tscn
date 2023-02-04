@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/materials/dark_grey.tres" type="Material" id=1]
 [ext_resource path="res://game/objects/computer_ai/computer_ai.gd" type="Script" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/materials/main.tres" type="Material" id=5]
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/materials/dark_accent.tres" type="Material" id=6]
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/materials/black.tres" type="Material" id=7]
-[ext_resource path="res://game/audio/voice/ai-humming.ogg" type="AudioStream" id=8]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Props_ComputerSmall_Cube032"
@@ -80,7 +79,6 @@ surfaces/4 = {
 
 [node name="ComputerAI" type="Spatial"]
 script = ExtResource( 2 )
-current_audio = ExtResource( 8 )
 
 [node name="Face" type="AnimatedSprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.35782, 0.262382 )
@@ -93,6 +91,5 @@ use_in_baked_light = true
 mesh = SubResource( 1 )
 
 [node name="Audio" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource( 8 )
-unit_db = 2.0
+unit_size = 10.0
 bus = "Voice"

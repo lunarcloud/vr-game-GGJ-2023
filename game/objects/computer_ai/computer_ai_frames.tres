@@ -12,6 +12,11 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "humming",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "screaming",
