@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/bodies/Door_Single.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/meshlibrary/scifi_modular.meshlib" type="MeshLibrary" id=2]
@@ -10,14 +10,17 @@
 [ext_resource path="res://game/level_maps/exterior_ship/parts/barrier.tscn" type="PackedScene" id=8]
 [ext_resource path="res://game/level_maps/exterior_ship/parts/ramp.tscn" type="PackedScene" id=9]
 [ext_resource path="res://game/level_maps/exterior_ship/parts/bridge.tscn" type="PackedScene" id=10]
-[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/details/Details_Output.tscn" type="PackedScene" id=11]
+[ext_resource path="res://game/level_maps/exterior_ship/repair_puzzle_area.tscn" type="PackedScene" id=11]
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/bodies/Props_ChestBottom.tscn" type="PackedScene" id=12]
 [ext_resource path="res://game/level_maps/exterior_ship/parts/array.tscn" type="PackedScene" id=13]
+[ext_resource path="res://game/level_maps/exterior_ship/exterior_ship.gd" type="Script" id=14]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/Props_ComputerSmall.tscn" type="PackedScene" id=15]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 15, 77, 22 )
 
 [node name="ExteriorShip" type="Spatial"]
+script = ExtResource( 14 )
 
 [node name="Gravity" type="Spatial" parent="."]
 
@@ -125,40 +128,24 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.3, 69
 [node name="Props_ComputerSmall" parent="Core/TopObjects" instance=ExtResource( 5 )]
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 7, 69, -2 )
 
+[node name="MidwayObjects" type="Spatial" parent="Core"]
+
+[node name="Props_ComputerSmall2" parent="Core/MidwayObjects" instance=ExtResource( 15 )]
+transform = Transform( -0.671376, 0.527212, -0.520866, -0.635929, -0.0488939, 0.770197, 0.38059, 0.848326, 0.368095, 6.947, -30.5, 8.06 )
+skeleton = NodePath("../../TopObjects")
+
 [node name="Shaft" parent="Core" instance=ExtResource( 3 )]
 
 [node name="Reactor" parent="Core" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -90, 0 )
-
-[node name="BottomGridMap" type="GridMap" parent="Core"]
-transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 8.66, -75, 0 )
-mesh_library = ExtResource( 2 )
-use_in_baked_light = true
-cell_size = Vector3( 1, 2, 1 )
-cell_center_x = false
-cell_center_y = false
-cell_center_z = false
-data = {
-"cells": PoolIntArray( 65532, 0, 1441809, 196604, 0, 1441809, 65532, 2, 22, 65534, 2, 17, 196604, 2, 22, 196606, 2, 17, 65532, 65534, 22, 65534, 65534, 655377, 196604, 65534, 22, 196606, 65534, 655377 )
-}
-__meta__ = {
-"_editor_clip_": 0,
-"_editor_floor_": Vector3( 0, 2, 0 )
-}
 
 [node name="BottomObjects" type="Spatial" parent="Core"]
 
 [node name="Props_ChestBottom" parent="Core/BottomObjects" instance=ExtResource( 12 )]
 transform = Transform( -4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, 1, -1, 4.37114e-08, -4.37114e-08, -8.60025, -74.5, 0 )
 
-[node name="Details_Output" parent="Core/BottomObjects" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 10.3, -71.2004, 0 )
-
-[node name="Details_Output2" parent="Core/BottomObjects" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 10.3, -73, -1.8 )
-
-[node name="Details_Output3" parent="Core/BottomObjects" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3, -73, 1.8 )
+[node name="RepairPuzzleArea" parent="Core/BottomObjects" instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 8.66, -75, 0 )
 
 [node name="Arrays" type="Spatial" parent="Core"]
 
