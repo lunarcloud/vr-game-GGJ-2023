@@ -1,0 +1,25 @@
+[remap]
+
+importer="texture_array"
+type="TextureArray"
+path="res://.import/quarters.exr-f42c5037a4d67846790a1de38d10325e.texarr"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://game/level_maps/quarters/lighting/quarters.exr"
+dest_files=[ "res://.import/quarters.exr-f42c5037a4d67846790a1de38d10325e.texarr" ]
+
+[params]
+
+compress/mode=0
+compress/no_bptc_if_rgb=false
+flags/repeat=false
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=false
+slices/horizontal=1
+slices/vertical=1
