@@ -7,7 +7,7 @@ onready var audio : AudioStreamPlayer3D = $Audio
 onready var face : AnimatedSprite3D = $Face
 
 # Set this if you want the scene to start with the computer talking
-var current_audio : AudioStream setget _audio_update, _get_audio
+export var current_audio : AudioStream setget _audio_update, _get_audio
 
 export(Array, AudioStream) var audio_streams : Array
 
@@ -35,11 +35,17 @@ func _ready():
 	if Engine.editor_hint:
 		return
 
-	audio.connect("finished", self, "update_animation", [Faces.Idle])
+	# warning-ignore:return_value_discarded
+	audio.connect("finished", self, "_on_audio_finished")
 
 	if play_first_audio_at_start:
 		audio.play()
 		update_animation(Faces.Talk)
+
+
+func _on_audio_finished() -> void:
+	if face_visible:
+		update_animation(Faces.Idle)
 
 
 func _get_audio() -> AudioStream:
@@ -49,8 +55,12 @@ func _get_audio() -> AudioStream:
 
 
 func _audio_update(new_value: AudioStream) -> void:
+	if not is_instance_valid(audio):
+		audio = $Audio
+	if not is_instance_valid(audio):
+		return
 	audio.stream = new_value
-	if current_audio != null:
+	if new_value != null:
 		face_visible = true
 		if Engine.editor_hint:
 			play_first_audio_at_start = true
@@ -89,9 +99,11 @@ func _get_terminal_visible() -> bool:
 #func _process(delta):
 #	pass
 
-func play_line(index: int, face : int = Faces.NoChange) -> void:
+func play_line(index: int, new_face: int) -> void:
+	audio.stop()
 	current_audio = audio_streams[index]
-	update_animation(face)
+	update_animation(new_face)
+	audio.play()
 
 
 func update_animation(expression: int) -> void:
@@ -102,8 +114,8 @@ func update_animation(expression: int) -> void:
 
 	match expression:
 		Faces.Scream:
-			face.animation = "screaming"
+			face.play("screaming")
 		Faces.Talk:
-			face.animation = "talking"
+			face.play("talking")
 		_:
-			face.animation = "default"
+			face.play( "default")

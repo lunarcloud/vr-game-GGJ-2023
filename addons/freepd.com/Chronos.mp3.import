@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Chronos.mp3-e99e0ac46a7f0d0f8b26dafdabd47f1f.mp3str"
+
+[deps]
+
+source_file="res://addons/freepd.com/Chronos.mp3"
+dest_files=[ "res://.import/Chronos.mp3-e99e0ac46a7f0d0f8b26dafdabd47f1f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Space Ambience.mp3-1b687a2b5da77cf3ca2f93ae20016b1a.mp3str"
+
+[deps]
+
+source_file="res://addons/freepd.com/Space Ambience.mp3"
+dest_files=[ "res://.import/Space Ambience.mp3-1b687a2b5da77cf3ca2f93ae20016b1a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
