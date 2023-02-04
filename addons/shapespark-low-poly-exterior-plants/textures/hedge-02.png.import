@@ -3,16 +3,16 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/hedge-02.png-d75e66d76abc5717b5610feaaae67c41.s3tc.stex"
-path.etc="res://.import/hedge-02.png-d75e66d76abc5717b5610feaaae67c41.etc.stex"
+path.etc2="res://.import/hedge-02.png-d75e66d76abc5717b5610feaaae67c41.etc2.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/shapespark-low-poly-exterior-plants/textures/hedge-02.png"
-dest_files=[ "res://.import/hedge-02.png-d75e66d76abc5717b5610feaaae67c41.s3tc.stex", "res://.import/hedge-02.png-d75e66d76abc5717b5610feaaae67c41.etc.stex" ]
+dest_files=[ "res://.import/hedge-02.png-d75e66d76abc5717b5610feaaae67c41.s3tc.stex", "res://.import/hedge-02.png-d75e66d76abc5717b5610feaaae67c41.etc2.stex" ]
 
 [params]
 

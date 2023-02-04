@@ -3,16 +3,16 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/grass-02.png-3dc62f84f81d16cc078b341e9e96e4bb.s3tc.stex"
-path.etc="res://.import/grass-02.png-3dc62f84f81d16cc078b341e9e96e4bb.etc.stex"
+path.etc2="res://.import/grass-02.png-3dc62f84f81d16cc078b341e9e96e4bb.etc2.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/shapespark-low-poly-exterior-plants/textures/grass-02.png"
-dest_files=[ "res://.import/grass-02.png-3dc62f84f81d16cc078b341e9e96e4bb.s3tc.stex", "res://.import/grass-02.png-3dc62f84f81d16cc078b341e9e96e4bb.etc.stex" ]
+dest_files=[ "res://.import/grass-02.png-3dc62f84f81d16cc078b341e9e96e4bb.s3tc.stex", "res://.import/grass-02.png-3dc62f84f81d16cc078b341e9e96e4bb.etc2.stex" ]
 
 [params]
 

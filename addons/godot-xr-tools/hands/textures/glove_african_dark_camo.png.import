@@ -3,16 +3,16 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/glove_african_dark_camo.png-3a526d8d251e73995f6fd3ba5cdd0b4e.s3tc.stex"
-path.etc="res://.import/glove_african_dark_camo.png-3a526d8d251e73995f6fd3ba5cdd0b4e.etc.stex"
+path.etc2="res://.import/glove_african_dark_camo.png-3a526d8d251e73995f6fd3ba5cdd0b4e.etc2.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/godot-xr-tools/hands/textures/glove_african_dark_camo.png"
-dest_files=[ "res://.import/glove_african_dark_camo.png-3a526d8d251e73995f6fd3ba5cdd0b4e.s3tc.stex", "res://.import/glove_african_dark_camo.png-3a526d8d251e73995f6fd3ba5cdd0b4e.etc.stex" ]
+dest_files=[ "res://.import/glove_african_dark_camo.png-3a526d8d251e73995f6fd3ba5cdd0b4e.s3tc.stex", "res://.import/glove_african_dark_camo.png-3a526d8d251e73995f6fd3ba5cdd0b4e.etc2.stex" ]
 
 [params]
 

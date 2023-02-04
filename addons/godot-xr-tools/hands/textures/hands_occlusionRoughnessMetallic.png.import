@@ -3,16 +3,16 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/hands_occlusionRoughnessMetallic.png-73229fc54301aa8833117ebde8abfd4e.s3tc.stex"
-path.etc="res://.import/hands_occlusionRoughnessMetallic.png-73229fc54301aa8833117ebde8abfd4e.etc.stex"
+path.etc2="res://.import/hands_occlusionRoughnessMetallic.png-73229fc54301aa8833117ebde8abfd4e.etc2.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/godot-xr-tools/hands/textures/hands_occlusionRoughnessMetallic.png"
-dest_files=[ "res://.import/hands_occlusionRoughnessMetallic.png-73229fc54301aa8833117ebde8abfd4e.s3tc.stex", "res://.import/hands_occlusionRoughnessMetallic.png-73229fc54301aa8833117ebde8abfd4e.etc.stex" ]
+dest_files=[ "res://.import/hands_occlusionRoughnessMetallic.png-73229fc54301aa8833117ebde8abfd4e.s3tc.stex", "res://.import/hands_occlusionRoughnessMetallic.png-73229fc54301aa8833117ebde8abfd4e.etc2.stex" ]
 
 [params]
 

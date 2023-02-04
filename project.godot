@@ -356,7 +356,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Godot XR Template"
+config/name="Exo-Gardener"
+config/description="You're a space-faring gardener, a maintainer of interstellar plant-based systems.
+This is a your latest job."
 run/main_scene="res://game/main.tscn"
 config/icon="res://icon.png"
 
@@ -399,7 +401,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
-vram_compression/import_etc=true
-vram_compression/import_etc2=false
+quality/filters/msaa=5
 environment/default_environment="res://default_env.tres"

@@ -3,16 +3,16 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/clover-05.png-68d6e84021697d25583b090185cebfd0.s3tc.stex"
-path.etc="res://.import/clover-05.png-68d6e84021697d25583b090185cebfd0.etc.stex"
+path.etc2="res://.import/clover-05.png-68d6e84021697d25583b090185cebfd0.etc2.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/shapespark-low-poly-exterior-plants/textures/clover-05.png"
-dest_files=[ "res://.import/clover-05.png-68d6e84021697d25583b090185cebfd0.s3tc.stex", "res://.import/clover-05.png-68d6e84021697d25583b090185cebfd0.etc.stex" ]
+dest_files=[ "res://.import/clover-05.png-68d6e84021697d25583b090185cebfd0.s3tc.stex", "res://.import/clover-05.png-68d6e84021697d25583b090185cebfd0.etc2.stex" ]
 
 [params]
 

@@ -3,16 +3,16 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/shrubbery-1-02.png-cbe37c01c0fc6798852686b7c3f3ae22.s3tc.stex"
-path.etc="res://.import/shrubbery-1-02.png-cbe37c01c0fc6798852686b7c3f3ae22.etc.stex"
+path.etc2="res://.import/shrubbery-1-02.png-cbe37c01c0fc6798852686b7c3f3ae22.etc2.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/shapespark-low-poly-exterior-plants/textures/shrubbery-1-02.png"
-dest_files=[ "res://.import/shrubbery-1-02.png-cbe37c01c0fc6798852686b7c3f3ae22.s3tc.stex", "res://.import/shrubbery-1-02.png-cbe37c01c0fc6798852686b7c3f3ae22.etc.stex" ]
+dest_files=[ "res://.import/shrubbery-1-02.png-cbe37c01c0fc6798852686b7c3f3ae22.s3tc.stex", "res://.import/shrubbery-1-02.png-cbe37c01c0fc6798852686b7c3f3ae22.etc2.stex" ]
 
 [params]
 

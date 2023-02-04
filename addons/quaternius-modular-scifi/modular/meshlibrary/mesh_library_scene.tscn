@@ -1,0 +1,173 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/Staircase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/FloorTile_Corner.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/FloorTile_Basic.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/FloorTile_InnerCorner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/SmallWindows_Wall_SideB.tscn" type="PackedScene" id=9]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/FloorTile_Double.tscn" type="PackedScene" id=10]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/Window_Wall_SideA.tscn" type="PackedScene" id=12]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/Wall_Empty.tscn" type="PackedScene" id=13]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/Column_1.tscn" type="PackedScene" id=14]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/ThreeWindows_Wall_SideA.tscn" type="PackedScene" id=16]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/Wall_5.tscn" type="PackedScene" id=18]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/ThreeWindows_Wall_SideB.tscn" type="PackedScene" id=19]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/Column_Slim.tscn" type="PackedScene" id=20]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/Window_Wall_SideB.tscn" type="PackedScene" id=21]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/Column_3.tscn" type="PackedScene" id=23]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/Wall_1.tscn" type="PackedScene" id=24]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/FloorTile_Empty.tscn" type="PackedScene" id=25]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/FloorTile_Side.tscn" type="PackedScene" id=26]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/Wall_2.tscn" type="PackedScene" id=28]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/Wall_3.tscn" type="PackedScene" id=29]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/Wall_4.tscn" type="PackedScene" id=32]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/Column_2.tscn" type="PackedScene" id=34]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/FloorTile_Basic2.tscn" type="PackedScene" id=35]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/LongWindow_Wall_SideA.tscn" type="PackedScene" id=36]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/LongWindow_Wall_SideB.tscn" type="PackedScene" id=37]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/DoorSingle_Wall_SideB.tscn" type="PackedScene" id=38]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/SmallWindows_Wall_SideA.tscn" type="PackedScene" id=39]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/DoorSingle_Wall_SideA.tscn" type="PackedScene" id=40]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/DoorDouble_Wall_SideA.tscn" type="PackedScene" id=41]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/DoorSingleLong_Wall_SideA.tscn" type="PackedScene" id=42]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/DoorDouble_Wall_SideB.tscn" type="PackedScene" id=43]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/walls/DoorDoubleLong_Wall_SideA.tscn" type="PackedScene" id=44]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1, 0.08, 1 )
+
+[sub_resource type="BoxShape" id=370]
+extents = Vector3( 2, 0.08, 1 )
+
+[node name="MeshLibraryScene" type="Spatial"]
+
+[node name="DoorDoubleLong_Wall_SideA" parent="." instance=ExtResource( 44 )]
+
+[node name="DoorDouble_Wall_SideA" parent="." instance=ExtResource( 41 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0 )
+
+[node name="DoorDouble_Wall_SideB" parent="." instance=ExtResource( 43 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0 )
+
+[node name="DoorSingleLong_Wall_SideA" parent="." instance=ExtResource( 42 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0 )
+
+[node name="DoorSingle_Wall_SideA" parent="." instance=ExtResource( 40 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0 )
+
+[node name="DoorSingle_Wall_SideB" parent="." instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 0 )
+
+[node name="LongWindow_Wall_SideA" parent="." instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
+
+[node name="LongWindow_Wall_SideB" parent="." instance=ExtResource( 37 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 4 )
+
+[node name="SmallWindows_Wall_SideA" parent="." instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 4 )
+
+[node name="SmallWindows_Wall_SideB" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 4 )
+
+[node name="ThreeWindows_Wall_SideA" parent="." instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 4 )
+
+[node name="ThreeWindows_Wall_SideB" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 4 )
+
+[node name="Wall_1" parent="." instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8 )
+
+[node name="Wall_2" parent="." instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 8 )
+
+[node name="Wall_3" parent="." instance=ExtResource( 29 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 8 )
+
+[node name="Wall_4" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 8 )
+
+[node name="Wall_5" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 8 )
+
+[node name="Wall_Empty" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 8 )
+
+[node name="Window_Wall_SideA" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, 4 )
+
+[node name="Window_Wall_SideB" parent="." instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 4 )
+
+[node name="Column_1" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12 )
+
+[node name="Column_2" parent="." instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12 )
+
+[node name="Column_3" parent="." instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12 )
+
+[node name="Column_Slim" parent="." instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12 )
+
+[node name="Staircase" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 12 )
+
+[node name="FloorTile_Basic" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20 )
+
+[node name="StaticBody" type="StaticBody" parent="FloorTile_Basic"]
+
+[node name="CollisionShape" type="CollisionShape" parent="FloorTile_Basic/StaticBody"]
+shape = SubResource( 1 )
+
+[node name="FloorTile_Basic2" parent="." instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 20 )
+
+[node name="StaticBody" type="StaticBody" parent="FloorTile_Basic2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="FloorTile_Basic2/StaticBody"]
+shape = SubResource( 1 )
+
+[node name="FloorTile_Corner" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 20 )
+
+[node name="StaticBody" type="StaticBody" parent="FloorTile_Corner"]
+
+[node name="CollisionShape" type="CollisionShape" parent="FloorTile_Corner/StaticBody"]
+shape = SubResource( 1 )
+
+[node name="FloorTile_Double" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 20 )
+
+[node name="StaticBody" type="StaticBody" parent="FloorTile_Double"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="FloorTile_Double/StaticBody"]
+shape = SubResource( 370 )
+
+[node name="FloorTile_Empty" parent="." instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24 )
+
+[node name="StaticBody" type="StaticBody" parent="FloorTile_Empty"]
+
+[node name="CollisionShape" type="CollisionShape" parent="FloorTile_Empty/StaticBody"]
+shape = SubResource( 1 )
+
+[node name="FloorTile_InnerCorner" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 24 )
+
+[node name="StaticBody" type="StaticBody" parent="FloorTile_InnerCorner"]
+
+[node name="CollisionShape" type="CollisionShape" parent="FloorTile_InnerCorner/StaticBody"]
+shape = SubResource( 1 )
+
+[node name="FloorTile_Side" parent="." instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 24 )
+
+[node name="StaticBody" type="StaticBody" parent="FloorTile_Side"]
+
+[node name="CollisionShape" type="CollisionShape" parent="FloorTile_Side/StaticBody"]
+shape = SubResource( 1 )

@@ -23,6 +23,7 @@ script_templates/
 # Backup files
 *.bak
 *.kate-swp
+*~
 
 # Ignore Mac Thumbnails
 .DS_Store
