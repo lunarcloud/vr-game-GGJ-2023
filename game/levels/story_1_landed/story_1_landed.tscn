@@ -1,14 +1,59 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://game/levels/level_base.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/level_maps/dock_bay/dock_bay.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/environments/spacestation_interior_env.tres" type="Environment" id=3]
 [ext_resource path="res://game/objects/computer_ai/computer_ai.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/audio/voice/ai-over-here.ogg" type="AudioStream" id=5]
+[ext_resource path="res://game/audio/voice/ai-humming.ogg" type="AudioStream" id=6]
+[ext_resource path="res://game/audio/voice/ai-story1-chatting.ogg" type="AudioStream" id=7]
+[ext_resource path="res://game/objects/computer_ai/computer_ai_visible_trigger.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game/objects/computer_ai/computer_ai_line_trigger.tscn" type="PackedScene" id=9]
+[ext_resource path="res://game/objects/computer_ai/computer_ai_line_trigger.gd" type="Script" id=10]
+[ext_resource path="res://game/audio/voice/ai-good-luck.ogg" type="AudioStream" id=11]
+
+[sub_resource type="SphereShape" id=2]
+radius = 3.36574
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 14.045, 3.91483, 1 )
 
 [node name="Story1Landed" instance=ExtResource( 1 )]
 environment = ExtResource( 3 )
+
+[node name="ARVROrigin" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.71176, -1.90735e-06, 11.7035 )
 
 [node name="DockingBay" parent="." index="1" instance=ExtResource( 2 )]
 
 [node name="ComputerAI" parent="." index="2" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -33.6 )
+audio_streams = [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 11 ) ]
+play_first_audio_at_start = true
+
+[node name="AiConversationArea" type="Area" parent="ComputerAI" index="3"]
+script = ExtResource( 10 )
+computer_ai_path = NodePath("..")
+voice_line_on_enter = 2
+use_on_exit_line = true
+voice_line_on_exit = 3
+
+[node name="CollisionShape" type="CollisionShape" parent="ComputerAI/AiConversationArea" index="0"]
+shape = SubResource( 2 )
+
+[node name="ComputerAiVisibilityTrigger" parent="ComputerAI" index="4" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 38.1 )
+computer_ai_path = NodePath("..")
+
+[node name="CollisionShape" type="CollisionShape" parent="ComputerAI/ComputerAiVisibilityTrigger" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.905, 0 )
+shape = SubResource( 1 )
+
+[node name="AiHummingTrigger" parent="ComputerAI" index="5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 27.35 )
+computer_ai_path = NodePath("..")
+voice_line_on_enter = 1
+
+[node name="CollisionShape" type="CollisionShape" parent="ComputerAI/AiHummingTrigger" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.905, 0 )
+shape = SubResource( 1 )
