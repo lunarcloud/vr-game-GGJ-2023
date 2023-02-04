@@ -46,7 +46,7 @@ export var grab_exclude : String= ""
 ## Initial object in snap zone
 export var initial_object : NodePath
 
-
+"../../BottomObjects"
 # Public fields
 var closest_object : Spatial = null
 var picked_up_object : Spatial = null
