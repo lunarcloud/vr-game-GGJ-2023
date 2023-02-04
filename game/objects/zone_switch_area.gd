@@ -5,6 +5,7 @@ extends Area
 ## Zone scene file
 export (String, FILE, '*.tscn') var zone_scene : String = ""
 
+export var enable := true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,7 +15,7 @@ func _ready():
 # Called when a body enters this area
 func _on_body_entered(body : Spatial):
 	# Skip if it wasn't the player entering
-	if not body.is_in_group("player_body"):
+	if not enable or not body.is_in_group("player_body"):
 		return
 
 	# Find our scene base

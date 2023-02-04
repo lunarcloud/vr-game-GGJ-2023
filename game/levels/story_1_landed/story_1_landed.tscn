@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://game/levels/level_base.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/level_maps/dock_bay/dock_bay.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://game/audio/voice/ai-over-here.ogg" type="AudioStream" id=5]
 [ext_resource path="res://game/audio/voice/ai-humming.ogg" type="AudioStream" id=6]
 [ext_resource path="res://game/audio/voice/ai-story1-chatting.ogg" type="AudioStream" id=7]
+[ext_resource path="res://game/objects/zone_switch_area.tscn" type="PackedScene" id=8]
 [ext_resource path="res://game/objects/computer_ai/computer_ai_line_trigger.tscn" type="PackedScene" id=9]
 [ext_resource path="res://addons/freepd.com/Chronos.mp3" type="AudioStream" id=10]
 [ext_resource path="res://game/audio/voice/ai-good-luck.ogg" type="AudioStream" id=11]
@@ -16,6 +17,9 @@ extents = Vector3( 14.045, 3.91483, 1 )
 
 [sub_resource type="SphereShape" id=2]
 radius = 3.36574
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 2.44244, 2.40321, 4.77745 )
 
 [node name="Story1Landed" instance=ExtResource( 1 )]
 environment = ExtResource( 3 )
@@ -63,3 +67,10 @@ voice_line_on_exit = 3
 
 [node name="CollisionShape" type="CollisionShape" parent="ComputerAI/AiConversationArea" index="0"]
 shape = SubResource( 2 )
+
+[node name="ZoneSwitchArea" parent="." index="4" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.02027, -45.165 )
+zone_scene = "res://game/levels/story_2_exterior/story_2_exterior.tscn"
+
+[node name="CollisionShape" type="CollisionShape" parent="ZoneSwitchArea" index="0"]
+shape = SubResource( 3 )
