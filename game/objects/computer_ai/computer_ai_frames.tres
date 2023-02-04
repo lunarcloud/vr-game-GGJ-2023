@@ -1,0 +1,24 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=2]
+
+[ext_resource path="res://game/textures/Ai/Ai_2.png" type="Texture" id=1]
+[ext_resource path="res://game/textures/Ai/Ai_idle.png" type="Texture" id=2]
+[ext_resource path="res://game/textures/Ai/Ai_scream.png" type="Texture" id=3]
+[ext_resource path="res://game/textures/Ai/Ai_1.png" type="Texture" id=4]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "screaming",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "talking",
+"speed": 5.0
+} ]
