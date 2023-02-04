@@ -39,10 +39,8 @@ func _ready():
 	# warning-ignore:return_value_discarded
 	audio.connect("finished", self, "_on_audio_finished")
 
-
 	if play_first_audio_at_start:
-		audio.play()
-		update_animation(Faces.Talk)
+		play_line(0, Faces.Talk)
 
 
 func _on_audio_finished() -> void:
@@ -104,10 +102,11 @@ func _get_terminal_visible() -> bool:
 #	pass
 
 func play_line(index: int, expression: int) -> void:
-	audio.stop()
-	_set_audio(audio_streams[index])
 	update_animation(expression)
-	audio.play()
+	audio.stop()
+	if index >= 0:
+		_set_audio(audio_streams[index])
+		audio.play()
 
 
 func update_animation(expression: int) -> void:

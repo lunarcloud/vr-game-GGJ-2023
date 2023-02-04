@@ -38,7 +38,7 @@ func _update_accent() -> void:
 	props_capsule.set_surface_material(1, current_accent)
 
 
-func _on_picked_up(pickable) -> void:
+func _on_picked_up(_pickable) -> void:
 	inserted = picked_up_by is XRToolsSnapZone
 	_update_accent()
 	if inserted and not damaged:
