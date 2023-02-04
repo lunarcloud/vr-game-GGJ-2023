@@ -10,9 +10,9 @@ export var computer_ai_path : NodePath
 
 var computer_ai : ComputerAiNpc
 
-export(int, "On", "Off", "No Change") var visibility_on_enter : int = Visibility.On
+export(int, "Off", "On", "No Change") var visibility_on_enter : int = Visibility.On
 
-export(int, "On", "Off", "No Change") var visibility_on_exit : int = Visibility.NoChange
+export(int, "Off", "On", "No Change") var visibility_on_exit : int = Visibility.NoChange
 
 export var only_once := true
 

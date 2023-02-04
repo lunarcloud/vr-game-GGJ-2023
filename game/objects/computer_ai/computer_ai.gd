@@ -2,7 +2,6 @@ tool
 class_name ComputerAiNpc
 extends Spatial
 
-onready var conversation_area : Area = $ConversationArea
 onready var terminal : MeshInstance = $Terminal
 onready var audio : AudioStreamPlayer3D = $Audio
 onready var face : AnimatedSprite3D = $Face
@@ -22,9 +21,10 @@ export var terminal_visible := false setget _terminal_visible_toggle, _get_termi
 
 enum Faces {
 	Off = 0,
-	Idle,
-	Scream,
-	Talk
+	Idle = 1,
+	Scream = 2,
+	Talk = 3,
+	NoChange = 4
 }
 
 
@@ -35,8 +35,6 @@ func _ready():
 	if Engine.editor_hint:
 		return
 
-	conversation_area.connect("body_entered", self, "_on_conversation_area_entered")
-	conversation_area.connect("body_exited", self, "_on_conversation_area_exited")
 	audio.connect("finished", self, "update_animation", [Faces.Idle])
 
 	if play_first_audio_at_start:
@@ -45,7 +43,9 @@ func _ready():
 
 
 func _get_audio() -> AudioStream:
-	return audio.stream
+	if not is_instance_valid(audio):
+		audio = $Audio
+	return audio.stream if is_instance_valid(audio) else null
 
 
 func _audio_update(new_value: AudioStream) -> void:
@@ -89,9 +89,17 @@ func _get_terminal_visible() -> bool:
 #func _process(delta):
 #	pass
 
+func play_line(index: int, face : int = Faces.NoChange) -> void:
+	current_audio = audio_streams[index]
+	update_animation(face)
+
 
 func update_animation(expression: int) -> void:
+	if expression == Faces.NoChange:
+		return
+
 	face_visible = expression != Faces.Off
+
 	match expression:
 		Faces.Scream:
 			face.animation = "screaming"
@@ -99,15 +107,3 @@ func update_animation(expression: int) -> void:
 			face.animation = "talking"
 		_:
 			face.animation = "default"
-
-
-func _on_conversation_area_entered(body: Node) -> void:
-	if Engine.editor_hint:
-		return
-	pass
-
-
-func _on_conversation_area_exited(body: Node) -> void:
-	if Engine.editor_hint:
-		return
-	pass

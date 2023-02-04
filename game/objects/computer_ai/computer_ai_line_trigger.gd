@@ -6,6 +6,8 @@ var computer_ai : ComputerAiNpc
 
 export var voice_line_on_enter : int = 0
 
+export(int, "Off", "Idle", "Scream", "Talk", "NoChange") var face_on_enter : int = ComputerAiNpc.Faces.Talk
+
 export var use_on_exit_line := false
 
 export var voice_line_on_exit : int = 0
@@ -27,8 +29,8 @@ func _ready():
 
 
 func _on_body_entered() -> void:
-	computer_ai.current_audio = computer_ai.audio_streams[voice_line_on_enter]
+	computer_ai.play_line(voice_line_on_enter, face_on_enter)
 
 
 func _on_body_exited() -> void:
-	computer_ai.current_audio = computer_ai.audio_streams[voice_line_on_exit]
+	computer_ai.play_line(voice_line_on_exit, -1)
