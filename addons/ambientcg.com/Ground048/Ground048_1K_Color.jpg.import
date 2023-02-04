@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/branch-1-01.png-c3168f8913f2f0573d1c1f157b4cbd27.s3tc.stex"
-path.etc2="res://.import/branch-1-01.png-c3168f8913f2f0573d1c1f157b4cbd27.etc2.stex"
+path.s3tc="res://.import/Ground048_1K_Color.jpg-60095b40389fdb1792c7880351095ab4.s3tc.stex"
+path.etc2="res://.import/Ground048_1K_Color.jpg-60095b40389fdb1792c7880351095ab4.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/shapespark-low-poly-exterior-plants/textures/branch-1-01.png"
-dest_files=[ "res://.import/branch-1-01.png-c3168f8913f2f0573d1c1f157b4cbd27.s3tc.stex", "res://.import/branch-1-01.png-c3168f8913f2f0573d1c1f157b4cbd27.etc2.stex" ]
+source_file="res://addons/ambientcg.com/Ground048/Ground048_1K_Color.jpg"
+dest_files=[ "res://.import/Ground048_1K_Color.jpg-60095b40389fdb1792c7880351095ab4.s3tc.stex", "res://.import/Ground048_1K_Color.jpg-60095b40389fdb1792c7880351095ab4.etc2.stex" ]
 
 [params]
 
@@ -21,9 +21,9 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=true
 flags/filter=true
-flags/mipmaps=false
+flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=1
 process/fix_alpha_border=true
