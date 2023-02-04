@@ -3,4 +3,6 @@
 [ext_resource path="res://game/objects/computer_ai/computer_ai_line_trigger.gd" type="Script" id=1]
 
 [node name="AiSpeechTrigger" type="Area"]
+collision_layer = 0
+collision_mask = 524288
 script = ExtResource( 1 )

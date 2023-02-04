@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ai-story1-chatting.ogg-0d39596bd0bda269d1c664f43a82b330.oggstr"
+
+[deps]
+
+source_file="res://game/audio/voice/ai-story1-chatting.ogg"
+dest_files=[ "res://.import/ai-story1-chatting.ogg-0d39596bd0bda269d1c664f43a82b330.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

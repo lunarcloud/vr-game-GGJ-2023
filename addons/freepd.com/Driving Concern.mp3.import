@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Driving Concern.mp3-b5f2dc0e0604df092ddeeec2237592c5.mp3str"
+
+[deps]
+
+source_file="res://addons/freepd.com/Driving Concern.mp3"
+dest_files=[ "res://.import/Driving Concern.mp3-b5f2dc0e0604df092ddeeec2237592c5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

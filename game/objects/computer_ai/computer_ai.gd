@@ -2,13 +2,12 @@ tool
 class_name ComputerAiNpc
 extends Spatial
 
-onready var conversation_area : Area = $ConversationArea
 onready var terminal : MeshInstance = $Terminal
 onready var audio : AudioStreamPlayer3D = $Audio
 onready var face : AnimatedSprite3D = $Face
 
 # Set this if you want the scene to start with the computer talking
-export var current_audio : AudioStream setget _audio_update, _get_audio
+export var current_audio : AudioStream setget _set_audio, _get_audio
 
 export(Array, AudioStream) var audio_streams : Array
 
@@ -22,9 +21,11 @@ export var terminal_visible := false setget _terminal_visible_toggle, _get_termi
 
 enum Faces {
 	Off = 0,
-	Idle,
-	Scream,
-	Talk
+	Idle = 1,
+	Scream = 2,
+	Talk = 3,
+	Humming = 4,
+	NoChange = 5
 }
 
 
@@ -35,22 +36,35 @@ func _ready():
 	if Engine.editor_hint:
 		return
 
-	conversation_area.connect("body_entered", self, "_on_conversation_area_entered")
-	conversation_area.connect("body_exited", self, "_on_conversation_area_exited")
-	audio.connect("finished", self, "update_animation", [Faces.Idle])
+	# warning-ignore:return_value_discarded
+	audio.connect("finished", self, "_on_audio_finished")
+
 
 	if play_first_audio_at_start:
 		audio.play()
 		update_animation(Faces.Talk)
 
 
+func _on_audio_finished() -> void:
+	if face_visible:
+		update_animation(Faces.Idle)
+
+
 func _get_audio() -> AudioStream:
-	return audio.stream
+	if not is_instance_valid(audio):
+		audio = $Audio
+	return audio.stream if is_instance_valid(audio) else null
 
 
-func _audio_update(new_value: AudioStream) -> void:
+func _set_audio(new_value: AudioStream) -> void:
+	if not is_instance_valid(audio):
+		audio = $Audio
+	if not is_instance_valid(audio):
+		return
+
 	audio.stream = new_value
-	if current_audio != null:
+
+	if new_value != null:
 		face_visible = true
 		if Engine.editor_hint:
 			play_first_audio_at_start = true
@@ -89,25 +103,25 @@ func _get_terminal_visible() -> bool:
 #func _process(delta):
 #	pass
 
+func play_line(index: int, expression: int) -> void:
+	audio.stop()
+	_set_audio(audio_streams[index])
+	update_animation(expression)
+	audio.play()
+
 
 func update_animation(expression: int) -> void:
-	face_visible = expression != Faces.Off
+	if expression == Faces.NoChange:
+		return
+
+	face.visible = expression != Faces.Off
+
 	match expression:
 		Faces.Scream:
-			face.animation = "screaming"
+			face.play("screaming")
 		Faces.Talk:
-			face.animation = "talking"
+			face.play("talking")
+		Faces.Humming:
+			face.play("humming")
 		_:
-			face.animation = "default"
-
-
-func _on_conversation_area_entered(body: Node) -> void:
-	if Engine.editor_hint:
-		return
-	pass
-
-
-func _on_conversation_area_exited(body: Node) -> void:
-	if Engine.editor_hint:
-		return
-	pass
+			face.play( "default")
