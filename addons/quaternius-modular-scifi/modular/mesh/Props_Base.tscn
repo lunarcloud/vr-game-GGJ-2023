@@ -48,4 +48,5 @@ surfaces/2 = {
 }
 
 [node name="Props_Base" type="MeshInstance"]
+use_in_baked_light = true
 mesh = SubResource( 1 )

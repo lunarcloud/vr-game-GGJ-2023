@@ -77,4 +77,5 @@ surfaces/4 = {
 
 [node name="Props_ChestTop" type="MeshInstance"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.600456, -0.370118 )
+use_in_baked_light = true
 mesh = SubResource( 2 )

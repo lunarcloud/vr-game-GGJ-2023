@@ -97,7 +97,7 @@ void fragment() {
 	float n_out53p1 = tex_frg_53_read.a;
 
 // ScalarOp:57
-	float n_in57p1 = 25.13274;
+	float n_in57p1 = 25.13270;
 	float n_out57p0 = dot(n_out53p0, vec3(0.333333, 0.333333, 0.333333)) * n_in57p1;
 
 // ScalarOp:55

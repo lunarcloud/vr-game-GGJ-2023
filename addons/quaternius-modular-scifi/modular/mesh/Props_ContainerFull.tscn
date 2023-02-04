@@ -75,4 +75,5 @@ surfaces/4 = {
 }
 
 [node name="Props_ContainerFull" type="MeshInstance"]
+use_in_baked_light = true
 mesh = SubResource( 1 )
