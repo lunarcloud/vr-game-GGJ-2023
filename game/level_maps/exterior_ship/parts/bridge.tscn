@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://game/level_maps/exterior_ship/materials/ramp_material.tres" type="Material" id=1]
+[ext_resource path="res://game/level_maps/exterior_ship/audio/metal_walk_audio.tres" type="Resource" id=2]
+[ext_resource path="res://addons/godot-xr-tools/audio/surface_audio.gd" type="Script" id=3]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Bridge_Cube006"
@@ -31,3 +33,7 @@ mesh = SubResource( 1 )
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6603, 0, 0 )
 shape = SubResource( 2 )
+
+[node name="XRToolsSurfaceAudio" type="Node" parent="."]
+script = ExtResource( 3 )
+surface_audio_type = ExtResource( 2 )
