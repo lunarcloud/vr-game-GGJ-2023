@@ -25,7 +25,7 @@ func _ready():
 	ai_speech_trigger_instruction.connect("body_exited", self, "_on_player_left_ai", [], CONNECT_ONESHOT)
 	var plants = get_tree().get_nodes_in_group("plant")
 	for plant in plants:
-		if plant is PickablePlant and plant.rotten == false:
+		if plant.rotten == false:
 			total_plants += 1
 		plant.connect("planted", self, "_on_plant_planted", [], CONNECT_ONESHOT)
 
@@ -44,6 +44,7 @@ func _on_plant_planted() -> void:
 		emit_signal("completed_mission")
 		computer_ai.play_line(2, ComputerAiNpc.Faces.Talk)
 		computer_ai.connect("finished_talking", self, "_on_enable_exit", [], CONNECT_ONESHOT)
+
 
 func _on_enable_exit() -> void:
 	exit_to_credits_a.enable = true

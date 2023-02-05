@@ -24,7 +24,7 @@ func _on_picked_up(_pickable) -> void:
 	if picked_up_by is XRToolsFunctionPickup:
 		grabbed_by_hand = true
 
-	elif not rotten and picked_up_by is XRToolsSnapZone:
+	elif not rotten and picked_up_by.is_in_group("goal_snap"):
 		enabled = false
 		emit_signal("planted")
 

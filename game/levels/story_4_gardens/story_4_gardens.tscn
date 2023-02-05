@@ -48,36 +48,84 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.9, 0,
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden1/SnapZone1" index="2" instance=ExtResource( 5 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone2" parent="Gardens/Structure/Garden1" index="4"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden1/SnapZone2" index="2" instance=ExtResource( 5 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone3" parent="Gardens/Structure/Garden1" index="5"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden1/SnapZone3" index="2" instance=ExtResource( 5 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone4" parent="Gardens/Structure/Garden1" index="6"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden1/SnapZone4" index="2" instance=ExtResource( 5 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone5" parent="Gardens/Structure/Garden1" index="7"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden1/SnapZone5" index="2" instance=ExtResource( 5 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone6" parent="Gardens/Structure/Garden1" index="8"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden1/SnapZone6" index="2" instance=ExtResource( 5 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="PlantChest2" parent="Gardens/Structure/Garden2" index="1" instance=ExtResource( 6 )]
@@ -87,36 +135,84 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5, 0, 
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden2/SnapZone1" index="2" instance=ExtResource( 7 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone2" parent="Gardens/Structure/Garden2" index="4"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden2/SnapZone2" index="2" instance=ExtResource( 7 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone3" parent="Gardens/Structure/Garden2" index="5"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden2/SnapZone3" index="2" instance=ExtResource( 7 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone4" parent="Gardens/Structure/Garden2" index="6"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden2/SnapZone4" index="2" instance=ExtResource( 7 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone5" parent="Gardens/Structure/Garden2" index="7"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden2/SnapZone5" index="2" instance=ExtResource( 7 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone6" parent="Gardens/Structure/Garden2" index="8"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden2/SnapZone6" index="2" instance=ExtResource( 7 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="PlantChest1" parent="Gardens/Structure/Garden3" index="1" instance=ExtResource( 4 )]
@@ -126,36 +222,84 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5, 0, 
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden3/SnapZone1" index="2" instance=ExtResource( 5 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone2" parent="Gardens/Structure/Garden3" index="4"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden3/SnapZone2" index="2" instance=ExtResource( 5 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone3" parent="Gardens/Structure/Garden3" index="5"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden3/SnapZone3" index="2" instance=ExtResource( 5 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone4" parent="Gardens/Structure/Garden3" index="6"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden3/SnapZone4" index="2" instance=ExtResource( 5 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone5" parent="Gardens/Structure/Garden3" index="7"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden3/SnapZone5" index="2" instance=ExtResource( 5 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone6" parent="Gardens/Structure/Garden3" index="8"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden3/SnapZone6" index="2" instance=ExtResource( 5 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="PlantChest2" parent="Gardens/Structure/Garden4" index="1" instance=ExtResource( 6 )]
@@ -165,36 +309,84 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 0, 0
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden4/SnapZone1" index="2" instance=ExtResource( 7 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone2" parent="Gardens/Structure/Garden4" index="4"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden4/SnapZone2" index="2" instance=ExtResource( 7 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone3" parent="Gardens/Structure/Garden4" index="5"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden4/SnapZone3" index="2" instance=ExtResource( 7 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone4" parent="Gardens/Structure/Garden4" index="6"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden4/SnapZone4" index="2" instance=ExtResource( 7 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone5" parent="Gardens/Structure/Garden4" index="7"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden4/SnapZone5" index="2" instance=ExtResource( 7 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="SnapZone6" parent="Gardens/Structure/Garden4" index="8"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden4/SnapZone6" index="2" instance=ExtResource( 7 )]
+enabled = null
+press_to_hold = null
+hold_method = null
+release_mode = null
+ranged_grab_method = null
+ranged_grab_speed = null
+picked_by_exclude = null
+picked_by_require = null
 rotten = true
 
 [node name="ComputerAI" parent="." index="4" instance=ExtResource( 9 )]
