@@ -281,12 +281,22 @@ func _update_snap_mode() -> void:
 
 # Called when a target in our grab area is dropped
 func _on_target_dropped(target: Spatial) -> void:
+	# Try grabbing the dropped object next frame
+	call_deferred("_try_grab_dropped", target)
+
+
+# Called to try and grab a recently dropped object
+func _try_grab_dropped(target: Spatial) -> void:
 	# Skip if not enabled
 	if not enabled:
 		return
 
 	# Skip if already holding a valid object
 	if is_instance_valid(picked_up_object):
+		return
+
+	# Skip if the target is not valid
+	if not is_instance_valid(target):
 		return
 
 	# Pick up the target if we can
