@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://game/environments/spacestation_interior_env.tres" type="Environment" id=1]
 [ext_resource path="res://game/level_maps/gardens/gardens.tscn" type="PackedScene" id=2]
@@ -14,9 +14,16 @@
 [ext_resource path="res://game/audio/voice/ai-story4-0-unpacked-go-get-em.ogg" type="AudioStream" id=12]
 [ext_resource path="res://game/audio/voice/ai-story4-1-advice.ogg" type="AudioStream" id=13]
 [ext_resource path="res://game/audio/voice/ai-story4-2-thanks.ogg" type="AudioStream" id=14]
+[ext_resource path="res://game/objects/zone_switch_area.tscn" type="PackedScene" id=15]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.823536, 1, 0.823679 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 2.0246, 1, 1.88426 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 2.04671, 1, 1.95884 )
 
 [node name="Story4Gardens" instance=ExtResource( 3 )]
 environment = ExtResource( 1 )
@@ -41,31 +48,37 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.9, 0,
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden1/SnapZone1" index="2" instance=ExtResource( 5 )]
+rotten = true
 
 [node name="SnapZone2" parent="Gardens/Structure/Garden1" index="4"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden1/SnapZone2" index="2" instance=ExtResource( 5 )]
+rotten = true
 
 [node name="SnapZone3" parent="Gardens/Structure/Garden1" index="5"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden1/SnapZone3" index="2" instance=ExtResource( 5 )]
+rotten = true
 
 [node name="SnapZone4" parent="Gardens/Structure/Garden1" index="6"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden1/SnapZone4" index="2" instance=ExtResource( 5 )]
+rotten = true
 
 [node name="SnapZone5" parent="Gardens/Structure/Garden1" index="7"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden1/SnapZone5" index="2" instance=ExtResource( 5 )]
+rotten = true
 
 [node name="SnapZone6" parent="Gardens/Structure/Garden1" index="8"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden1/SnapZone6" index="2" instance=ExtResource( 5 )]
+rotten = true
 
 [node name="PlantChest2" parent="Gardens/Structure/Garden2" index="1" instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5, 0, 0 )
@@ -74,31 +87,37 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5, 0, 
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden2/SnapZone1" index="2" instance=ExtResource( 7 )]
+rotten = true
 
 [node name="SnapZone2" parent="Gardens/Structure/Garden2" index="4"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden2/SnapZone2" index="2" instance=ExtResource( 7 )]
+rotten = true
 
 [node name="SnapZone3" parent="Gardens/Structure/Garden2" index="5"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden2/SnapZone3" index="2" instance=ExtResource( 7 )]
+rotten = true
 
 [node name="SnapZone4" parent="Gardens/Structure/Garden2" index="6"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden2/SnapZone4" index="2" instance=ExtResource( 7 )]
+rotten = true
 
 [node name="SnapZone5" parent="Gardens/Structure/Garden2" index="7"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden2/SnapZone5" index="2" instance=ExtResource( 7 )]
+rotten = true
 
 [node name="SnapZone6" parent="Gardens/Structure/Garden2" index="8"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden2/SnapZone6" index="2" instance=ExtResource( 7 )]
+rotten = true
 
 [node name="PlantChest1" parent="Gardens/Structure/Garden3" index="1" instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5, 0, 0 )
@@ -107,31 +126,37 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5, 0, 
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden3/SnapZone1" index="2" instance=ExtResource( 5 )]
+rotten = true
 
 [node name="SnapZone2" parent="Gardens/Structure/Garden3" index="4"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden3/SnapZone2" index="2" instance=ExtResource( 5 )]
+rotten = true
 
 [node name="SnapZone3" parent="Gardens/Structure/Garden3" index="5"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden3/SnapZone3" index="2" instance=ExtResource( 5 )]
+rotten = true
 
 [node name="SnapZone4" parent="Gardens/Structure/Garden3" index="6"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden3/SnapZone4" index="2" instance=ExtResource( 5 )]
+rotten = true
 
 [node name="SnapZone5" parent="Gardens/Structure/Garden3" index="7"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden3/SnapZone5" index="2" instance=ExtResource( 5 )]
+rotten = true
 
 [node name="SnapZone6" parent="Gardens/Structure/Garden3" index="8"]
 initial_object = NodePath("Plant1Rotten")
 
 [node name="Plant1Rotten" parent="Gardens/Structure/Garden3/SnapZone6" index="2" instance=ExtResource( 5 )]
+rotten = true
 
 [node name="PlantChest2" parent="Gardens/Structure/Garden4" index="1" instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 0, 0 )
@@ -140,31 +165,37 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 0, 0
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden4/SnapZone1" index="2" instance=ExtResource( 7 )]
+rotten = true
 
 [node name="SnapZone2" parent="Gardens/Structure/Garden4" index="4"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden4/SnapZone2" index="2" instance=ExtResource( 7 )]
+rotten = true
 
 [node name="SnapZone3" parent="Gardens/Structure/Garden4" index="5"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden4/SnapZone3" index="2" instance=ExtResource( 7 )]
+rotten = true
 
 [node name="SnapZone4" parent="Gardens/Structure/Garden4" index="6"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden4/SnapZone4" index="2" instance=ExtResource( 7 )]
+rotten = true
 
 [node name="SnapZone5" parent="Gardens/Structure/Garden4" index="7"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden4/SnapZone5" index="2" instance=ExtResource( 7 )]
+rotten = true
 
 [node name="SnapZone6" parent="Gardens/Structure/Garden4" index="8"]
 initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden4/SnapZone6" index="2" instance=ExtResource( 7 )]
+rotten = true
 
 [node name="ComputerAI" parent="." index="4" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.125, 0.08, 18.5 )
@@ -186,6 +217,20 @@ enabled = false
 [node name="CollisionShape" type="CollisionShape" parent="ComputerAI/AiSpeechTriggerBackForHelp" index="0"]
 transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -0.255791, 4.76837e-07, 0.115892 )
 shape = SubResource( 1 )
+
+[node name="ExitToCreditsA" parent="." index="5" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24.2467 )
+enable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="ExitToCreditsA" index="0"]
+shape = SubResource( 2 )
+
+[node name="ExitToCreditsB" parent="." index="6" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24.0964 )
+enable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="ExitToCreditsB" index="0"]
+shape = SubResource( 3 )
 
 [editable path="Gardens"]
 [editable path="Gardens/Structure/Garden1"]
