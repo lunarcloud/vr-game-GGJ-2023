@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://game/level_maps/exterior_ship/exterior_ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/levels/level_base.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://game/objects/computer_ai/computer_ai_line_trigger.tscn" type="PackedScene" id=14]
 [ext_resource path="res://addons/freepd.com/Space Ambience.mp3" type="AudioStream" id=15]
 [ext_resource path="res://addons/freesound.org/585801__colorscrimsontears__time-travel-future.wav" type="AudioStream" id=16]
+[ext_resource path="res://addons/freesound.org/256519__kodack__mask-breathing-sound-highpassed.wav" type="AudioStream" id=17]
 
 [sub_resource type="SphereShape" id=2]
 radius = 2.07904
@@ -40,7 +41,13 @@ stream = ExtResource( 15 )
 autoplay = true
 bus = "Music"
 
-[node name="ARVROrigin" parent="." index="2"]
+[node name="BreathingPlayer" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource( 17 )
+volume_db = -6.0
+autoplay = true
+bus = "SFX"
+
+[node name="ARVROrigin" parent="." index="3"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 69, 0 )
 
 [node name="ARVRCamera" parent="ARVROrigin" index="0"]
@@ -49,17 +56,17 @@ far = 500.0
 [node name="MovementWallWalk" parent="ARVROrigin" index="5" instance=ExtResource( 3 )]
 stick_distance = 2.0
 
-[node name="ExteriorShip" parent="." index="3" instance=ExtResource( 1 )]
+[node name="ExteriorShip" parent="." index="4" instance=ExtResource( 1 )]
 modules_damaged = true
 
-[node name="GoodModules" parent="." index="4" instance=ExtResource( 5 )]
+[node name="GoodModules" parent="." index="5" instance=ExtResource( 5 )]
 
-[node name="ComputerAIStart" parent="." index="5" instance=ExtResource( 6 )]
+[node name="ComputerAIStart" parent="." index="6" instance=ExtResource( 6 )]
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 6.98111, 69.0122, -1.97876 )
 audio_streams = [ ExtResource( 10 ) ]
 play_first_audio_at_start = true
 
-[node name="ComputerAIMidway" parent="." index="6" instance=ExtResource( 6 )]
+[node name="ComputerAIMidway" parent="." index="7" instance=ExtResource( 6 )]
 transform = Transform( -0.671382, 0.52721, -0.520861, -0.635923, -0.0488982, 0.770202, 0.380589, 0.848327, 0.368094, 6.947, -30.5, 8.06 )
 audio_streams = [ ExtResource( 11 ) ]
 
@@ -81,7 +88,7 @@ face_on_enter = 1
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.157182, 0 )
 shape = SubResource( 2 )
 
-[node name="ComputerAIRepairStation" parent="." index="7" instance=ExtResource( 6 )]
+[node name="ComputerAIRepairStation" parent="." index="8" instance=ExtResource( 6 )]
 transform = Transform( -1.81059e-08, 1, 6.18172e-08, 0.707107, -3.09086e-08, 0.707107, 0.707107, 5.65142e-08, -0.707107, 8.65978, -70.4411, 2.65755 )
 audio_streams = [ ExtResource( 13 ), ExtResource( 9 ) ]
 
@@ -96,7 +103,7 @@ shape = SubResource( 3 )
 stream = ExtResource( 16 )
 bus = "SFX"
 
-[node name="ComputerAIRepairSpares" parent="." index="8" instance=ExtResource( 6 )]
+[node name="ComputerAIRepairSpares" parent="." index="9" instance=ExtResource( 6 )]
 transform = Transform( 1.13133e-08, -1, -4.2222e-08, 0, -4.2222e-08, 1, -1, -1.13133e-08, 0, -8.66367, -74.7839, -0.930767 )
 audio_streams = [ ExtResource( 12 ) ]
 terminal_visible = true
@@ -108,7 +115,7 @@ computer_ai_path = NodePath("..")
 transform = Transform( 1, -1.77636e-15, -6.56861e-23, 0, 1, 3.55271e-15, 5.29396e-23, 5.40406e-24, 1, 0, 1.33627, 0 )
 shape = SubResource( 4 )
 
-[node name="ZoneSwitchArea" parent="." index="9" instance=ExtResource( 7 )]
+[node name="ZoneSwitchArea" parent="." index="10" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.09421, 70.9006, 0.0205402 )
 zone_scene = "res://game/levels/story_3_quarters/story_3_quarters.tscn"
 enable = false
