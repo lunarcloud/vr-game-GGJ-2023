@@ -17,7 +17,7 @@
 environment = ExtResource( 12 )
 
 [node name="LeftHand" parent="ARVROrigin/LeftHand" index="0" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0179483, 0, 0.0350583 )
+transform = Transform( 0.990268, 0, -0.139173, 0, 1, 0, 0.139173, 0, 0.990268, -0.0295391, -0.051, 0.134 )
 
 [node name="FunctionPickup" parent="ARVROrigin/LeftHand" index="1" instance=ExtResource( 4 )]
 grab_collision_mask = 4
@@ -36,7 +36,7 @@ jump_button_id = 7
 crouch_button = 1
 
 [node name="RightHand" parent="ARVROrigin/RightHand" index="0" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.035 )
+transform = Transform( 0.990268, 0, 0.139173, 0, 1, 0, -0.139173, 0, 0.990268, 0.03, -0.051, 0.134 )
 
 [node name="FunctionPickup" parent="ARVROrigin/RightHand" index="1" instance=ExtResource( 4 )]
 grab_collision_mask = 4
