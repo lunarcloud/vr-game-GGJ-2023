@@ -9,6 +9,7 @@ height = 3.0
 [node name="Tree-01-3-StaticBody" type="StaticBody"]
 
 [node name="Tree-01-3" parent="." instance=ExtResource( 1 )]
+use_in_baked_light = true
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.5, 0 )
