@@ -1,0 +1,122 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://game/levels/level_base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/environments/loading_environment.tres" type="Environment" id=2]
+[ext_resource path="res://addons/godot-xr-tools/staging/fade.gdshader" type="Shader" id=3]
+[ext_resource path="res://game/audio/voice/ai-story5-0-end-singing.ogg" type="AudioStream" id=4]
+[ext_resource path="res://addons/fontdesk.com/Alkatra[wght].ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://game/textures/SamSci_fi-Regular.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://game/levels/credits/fade.gd" type="Script" id=7]
+
+[sub_resource type="QuadMesh" id=1]
+custom_aabb = AABB( -5000, -5000, -5000, 10000, 10000, 10000 )
+size = Vector2( 2, 2 )
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 3 )
+shader_param/alpha = 0.0
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 6 )
+fallback/0 = ExtResource( 5 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "ScrollText"
+length = 30.0
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Credits Text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0, -8, -6.5, 0, 0, 0, 1, 1, 1, 1, 30, 1, 0, 18, -6.5, 0, 0, 0, 1, 1, 1, 1 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath("Thanks for Playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 0, 1, 0, -20.5, -6.5, 0, 0, 0, 1, 1, 1, 1, 20.1, 1, 0, 1.5, -6.5, 0, 0, 0, 1, 1, 1, 1 )
+tracks/2/type = "value"
+tracks/2/path = NodePath("Credits Text:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 29.5, 30 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="Credits" instance=ExtResource( 1 )]
+script = null
+
+[node name="Fade" type="MeshInstance" parent="." index="1"]
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+script = ExtResource( 7 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="2"]
+environment = ExtResource( 2 )
+
+[node name="Credits Text" type="Label3D" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8, -6.5 )
+text = "You've been playing:
+
+[Exo-Gardener]
+
+Made for the Global Game Jam 2023
+Southern NH Game Dev Meetup jam site.
+
+------------------------------------
+
+[Lead Artist]
+Chelle Furlong (MiFuWorks)
+
+[Assistant Modeller]
+Malcolm Nixon
+
+[Level Designers]
+Malcolm Nixon
+Sam Sarette
+
+[Game Logic]
+Sam Sarette
+Malcolm Nixon
+
+[Voice Actor]
+Amber Sarette
+
+[Main Font Designer]
+Sam Sarette
+
+[3rd-Party Assets]
+Fallback font from fontdesk.com
+SFX from freesound.org
+Music from FreePD.com
+Scifi Models from Quaternius
+Materials from AmbientCG.com
+Godot Engine 
+Godot XR Tools
+Godot XR Template"
+font = SubResource( 3 )
+autowrap = true
+
+[node name="Thanks for Playing" type="Label3D" parent="." index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20.5, -6.5 )
+text = "Thanks for Playing!"
+font = SubResource( 3 )
+autowrap = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+anims/ScrollText = SubResource( 4 )
+
+[node name="EndSongPlayer" type="AudioStreamPlayer" parent="." index="6"]
+stream = ExtResource( 4 )
+autoplay = true
+bus = "Music"

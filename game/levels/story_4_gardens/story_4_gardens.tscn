@@ -220,6 +220,7 @@ shape = SubResource( 1 )
 
 [node name="ExitToCreditsA" parent="." index="5" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24.2467 )
+zone_scene = "res://game/levels/credits/credits.tscn"
 enable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="ExitToCreditsA" index="0"]
@@ -227,6 +228,7 @@ shape = SubResource( 2 )
 
 [node name="ExitToCreditsB" parent="." index="6" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24.0964 )
+zone_scene = "res://game/levels/credits/credits.tscn"
 enable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="ExitToCreditsB" index="0"]
