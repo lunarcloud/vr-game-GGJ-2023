@@ -29,8 +29,10 @@ surfaces/0 = {
 [node name="Plant2" groups=["plant"] instance=ExtResource( 1 )]
 collision_layer = 4
 collision_mask = 7
+mode = 1
 script = ExtResource( 7 )
 picked_up_layer = 65536
+release_mode = 0
 rotten = false
 
 [node name="CollisionShape" parent="." index="0"]

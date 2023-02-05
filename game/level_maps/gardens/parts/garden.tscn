@@ -53,6 +53,7 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.144946, -4 )
 collision_layer = 4
 collision_mask = 65540
+grab_distance = 0.5
 snap_require = "plant"
 
 [node name="HighlightRing" parent="SnapZone1" instance=ExtResource( 2 )]
@@ -61,6 +62,7 @@ snap_require = "plant"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.144946, 0 )
 collision_layer = 4
 collision_mask = 65540
+grab_distance = 0.5
 snap_require = "plant"
 
 [node name="HighlightRing" parent="SnapZone2" instance=ExtResource( 2 )]
@@ -69,6 +71,7 @@ snap_require = "plant"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.144946, 4 )
 collision_layer = 4
 collision_mask = 65540
+grab_distance = 0.5
 snap_require = "plant"
 
 [node name="HighlightRing" parent="SnapZone3" instance=ExtResource( 2 )]
@@ -77,6 +80,7 @@ snap_require = "plant"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.144946, -4 )
 collision_layer = 4
 collision_mask = 65540
+grab_distance = 0.5
 snap_require = "plant"
 
 [node name="HighlightRing" parent="SnapZone4" instance=ExtResource( 2 )]
@@ -85,6 +89,7 @@ snap_require = "plant"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.144946, 0 )
 collision_layer = 4
 collision_mask = 65540
+grab_distance = 0.5
 snap_require = "plant"
 
 [node name="HighlightRing" parent="SnapZone5" instance=ExtResource( 2 )]
@@ -93,6 +98,7 @@ snap_require = "plant"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.144946, 4 )
 collision_layer = 4
 collision_mask = 65540
+grab_distance = 0.5
 snap_require = "plant"
 
 [node name="HighlightRing" parent="SnapZone6" instance=ExtResource( 2 )]
