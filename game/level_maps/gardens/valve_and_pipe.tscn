@@ -7,9 +7,11 @@
 [ext_resource path="res://game/level_maps/gardens/scripts/valve_and_pipe.gd" type="Script" id=5]
 [ext_resource path="res://addons/godot-xr-tools/interactables/interactable_handle.gd" type="Script" id=6]
 [ext_resource path="res://addons/godot-xr-tools/interactables/interactable_hinge.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/level_maps/gardens/materials/water_material.tres" type="Material" id=8]
 
 [sub_resource type="Animation" id=6]
 resource_name = "OffToFullOn"
+length = 6.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("WaterFillPipe/Water:translation")
 tracks/0/interp = 1
@@ -17,14 +19,15 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 6 ),
 "transitions": PoolRealArray( 0.5, 2 ),
 "update": 0,
-"values": [ Vector3( 0, -1.1, 0 ), Vector3( 0, 1.8, 0 ) ]
+"values": [ Vector3( 0, -1.5, 0 ), Vector3( 0, 1.8, 0 ) ]
 }
 
 [sub_resource type="Animation" id=7]
 resource_name = "OnToOff"
+length = 6.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("WaterFillPipe/Water:translation")
 tracks/0/interp = 1
@@ -32,18 +35,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.9 ),
+"times": PoolRealArray( 0, 6 ),
 "transitions": PoolRealArray( 1, 2 ),
 "update": 0,
-"values": [ Vector3( 0, 1.8, 0 ), Vector3( 0, -1.1, 0 ) ]
+"values": [ Vector3( 0, 1.8, 0 ), Vector3( 0, -1.5, 0 ) ]
 }
 
-[sub_resource type="SpatialMaterial" id=3]
-flags_transparent = true
-albedo_color = Color( 0.164706, 0.678431, 0.894118, 0.662745 )
-
 [sub_resource type="CylinderMesh" id=4]
-material = SubResource( 3 )
+material = ExtResource( 8 )
 top_radius = 0.11
 bottom_radius = 0.11
 height = 3.5
@@ -70,7 +69,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.941756 )
 transform = Transform( -8.74228e-09, 0, 0.2, 0, 1.06328, 0, -0.2, 0, -8.74228e-09, 0, 0, 0 )
 
 [node name="Water" type="MeshInstance" parent="WaterFillPipe"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64108, 0 )
 mesh = SubResource( 4 )
 
 [node name="WallMount" parent="." instance=ExtResource( 3 )]
