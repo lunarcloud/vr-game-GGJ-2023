@@ -21,6 +21,9 @@ export var inserted := false
 
 var current_accent : Material
 
+var _grabbed_by_hand := false
+
+
 signal insert_changed(value)
 
 # Called when the node enters the scene tree for the first time.
@@ -29,6 +32,7 @@ func _ready():
 	_update_accent()
 	# warning-ignore:return_value_discarded
 	connect("picked_up", self, "_on_picked_up")
+	connect("dropped", self, "_on_dropped")
 
 
 func _update_accent() -> void:
@@ -39,10 +43,22 @@ func _update_accent() -> void:
 
 
 func _on_picked_up(_pickable) -> void:
+	# Detect pickup by player
+	if picked_up_by is XRToolsFunctionPickup:
+		_grabbed_by_hand = true
+
+	# Detect picked up by snap-zone
 	inserted = picked_up_by is XRToolsSnapZone
+
 	_update_accent()
 	if inserted and not damaged:
 		activate_sound.play()
 	else:
 		pickup_sound.play()
 	emit_signal("insert_changed", inserted)
+
+
+func _on_dropped(_pickable) -> void:
+	if damaged and _grabbed_by_hand:
+		yield(get_tree().create_timer(1.0), "timeout")
+		drop_and_free()

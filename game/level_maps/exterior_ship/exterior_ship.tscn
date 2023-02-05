@@ -135,7 +135,7 @@ transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 7
 [node name="MidwayObjects" type="Spatial" parent="Core"]
 
 [node name="Props_ComputerSmall2" parent="Core/MidwayObjects" instance=ExtResource( 15 )]
-transform = Transform( -0.671376, 0.527212, -0.520866, -0.635929, -0.0488939, 0.770197, 0.38059, 0.848326, 0.368095, 6.947, -30.5, 8.06 )
+transform = Transform( -0.66815, 0.5, -0.550976, -0.636213, -3.78552e-08, 0.771513, 0.385757, 0.866025, 0.318106, 6.91378, -30.5, 8.00247 )
 skeleton = NodePath("../../TopObjects")
 
 [node name="Shaft" parent="Core" instance=ExtResource( 3 )]

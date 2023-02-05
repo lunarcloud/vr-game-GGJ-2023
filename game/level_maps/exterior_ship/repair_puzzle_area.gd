@@ -11,4 +11,5 @@ func update_children():
 	for child in modules.get_children():
 		child.damaged = modules_damaged
 		child.inserted = true
+		child.release_mode = XRToolsPickable.ReleaseMode.RIGID
 		child._update_accent()
