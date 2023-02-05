@@ -24,3 +24,7 @@ func change_water_level(amount: float) -> void:
 
 	water.translation.y = lerp(zero_water_y, full_water_y, amount)
 	emit_signal("water_level_changed", amount)
+
+
+func _on_valve_hinge_moved(angle):
+	change_water_level(angle / 360)
