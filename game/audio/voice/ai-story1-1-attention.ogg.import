@@ -11,5 +11,5 @@ dest_files=[ "res://.import/ai-story1-1-attention.ogg-1c405b54233eabcc1adef4a1f0
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
