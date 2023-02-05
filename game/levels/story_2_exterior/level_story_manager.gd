@@ -10,6 +10,9 @@ func _on_GoodModules_all_modules_good():
 	victory_audio.connect("finished", self, "_on_victory_finished", [], CONNECT_ONESHOT)
 	victory_audio.play()
 	zone_switch_area.enable = true
+	
+	# Disable triggers (for speed-runners who bypassed)
+	$"../ComputerAIMidway/AiSpeechTriggerStart".enabled = false
 
 
 func _on_victory_finished():
