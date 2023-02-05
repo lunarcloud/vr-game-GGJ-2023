@@ -22,7 +22,7 @@ signal completed_mission()
 
 
 func _ready():
-	ai_speech_trigger_instruction.connect("body_exited", self, "_on_player_left_ai", [], CONNECT_ONESHOT)
+	computer_ai.connect("finished_talking", self, "_on_player_left_ai", [], CONNECT_ONESHOT)
 	var plants = get_tree().get_nodes_in_group("plant")
 	for plant in plants:
 		if plant.rotten == false:
