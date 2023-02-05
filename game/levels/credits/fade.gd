@@ -1,20 +1,30 @@
 extends MeshInstance
 
-onready var tween := get_tree().create_tween()
+onready var tween : SceneTreeTween
+
+export var initially_black := false
+
+export var fade_at_start := false
+
+## Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	set_fade(1 if initially_black else 0)
+	if fade_at_start:
+		fade_black()
 
 
 func fade_visible() -> void:
-	tween.remove_all()
-	tween.interpolate_method(self, "set_fade", 1.0, 0.0, 1.0)
-	tween.start()
-	yield(tween, "tween_all_completed")
+	if tween:
+		tween.kill()
+	tween = get_tree().create_tween()
+	tween.tween_method(self, "set_fade", 1.0, 0.0, 1.0)
 
 
 func fade_black() -> void:
-	tween.remove_all()
-	tween.interpolate_method(self, "set_fade", 0.0, 1.0, 1.0)
-	tween.start()
-	yield(tween, "tween_all_completed")
+	if tween:
+		tween.kill()
+	tween = get_tree().create_tween()
+	tween.tween_method(self, "set_fade", 0.0, 1.0, 1.0)
 
 
 ## Fade
