@@ -54,7 +54,6 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 69, 
 far = 500.0
 
 [node name="MovementWallWalk" parent="ARVROrigin" index="5" instance=ExtResource( 3 )]
-stick_distance = 2.0
 
 [node name="ExteriorShip" parent="." index="4" instance=ExtResource( 1 )]
 modules_damaged = true
