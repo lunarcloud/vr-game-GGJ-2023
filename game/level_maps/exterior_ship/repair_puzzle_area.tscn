@@ -7,7 +7,7 @@
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/materials/accent.tres" type="Material" id=5]
 [ext_resource path="res://addons/godot-xr-tools/objects/snap_zone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/meshlibrary/scifi_modular.meshlib" type="MeshLibrary" id=7]
-[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/Props_ComputerSmall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/bodies/Props_ComputerSmall.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Details_Output_Cube059"

@@ -1,20 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/Props_ChestBottom.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/level_maps/gardens/parts/dirt_fill.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/godot-xr-tools/objects/snap_zone.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" type="PackedScene" id=4]
 
-[sub_resource type="ConvexPolygonShape" id=1]
-points = PoolVector3Array( -0.572714, 0.551759, -0.402593, -0.568303, 0.102041, -0.399992, -0.643799, 0.551759, -0.339698, -0.572714, 0.600309, -0.402593, 0.572588, 0.551759, -0.402593, -0.568303, 0.00451308, -0.300368, -0.638884, 0.0669263, -0.229749, -0.638884, 0.164516, -0.329373, 0.562505, 0.102041, -0.399992, -0.643169, 0.232914, -0.0688853, -0.643799, 0.551759, 0.339619, -0.643799, 0.600309, -0.339698, -0.131079, 0.62834, -0.380997, 0.572588, 0.600309, -0.402593, 0.643673, 0.551759, -0.339698, -0.568303, 0.00451308, 0.301314, 0.562505, 0.00451308, -0.300368, -0.638884, 0.0669263, 0.238892, 0.633086, 0.164516, -0.329373, 0.633086, 0.0669263, -0.229749, -0.643169, 0.232914, 0.0680972, -0.643799, 0.600309, 0.339619, -0.638884, 0.165126, 0.337018, -0.568303, 0.102652, 0.399519, -0.572714, 0.551759, 0.402593, -0.131079, 0.62834, -0.361924, 0.133348, 0.62834, -0.380997, 0.643673, 0.600309, -0.339698, 0.643799, 0.551759, -0.150697, 0.637371, 0.232914, -0.0688853, 0.562505, 0.00451308, 0.301314, 0.633086, 0.0669263, 0.238892, -0.572714, 0.600309, 0.402593, 0.562505, 0.102652, 0.399519, 0.572588, 0.551759, 0.402514, 0.133348, 0.62834, -0.361924, 0.643799, 0.600309, -0.150697, 0.643799, 0.551759, 0.339619, 0.637371, 0.232914, 0.0680972, 0.633086, 0.165126, 0.337018, 0.572588, 0.600309, 0.402514, 0.643799, 0.600309, 0.339619 )
-
-[node name="DirtChest" type="StaticBody"]
+[node name="DirtChest" type="Spatial"]
 
 [node name="Props_ChestBottom" parent="." instance=ExtResource( 1 )]
 use_in_baked_light = false
-
-[node name="CollisionShape" type="CollisionShape" parent="."]
-shape = SubResource( 1 )
 
 [node name="DirtFill" parent="." instance=ExtResource( 2 )]
 
