@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Electro Chill D.mp3-11a4324f0409b3d2b1248ae84acd6a4e.mp3str"
+
+[deps]
+
+source_file="res://addons/freepd.com/Electro Chill D.mp3"
+dest_files=[ "res://.import/Electro Chill D.mp3-11a4324f0409b3d2b1248ae84acd6a4e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
