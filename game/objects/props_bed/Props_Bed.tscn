@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/materials/accent.tres" type="Material" id=1]
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/materials/main.tres" type="Material" id=2]
@@ -44,6 +44,9 @@ surfaces/2 = {
 "vertex_count": 8
 }
 
+[sub_resource type="ConvexPolygonShape" id=4]
+points = PoolVector3Array( -1.0045, 1.07821, -0.539312, -1.0045, 0.931932, -0.344619, -1.02846, 1.13376, -0.511227, -1.0045, 1.64673, -0.539312, 1.0043, 1.07821, -0.539312, -1.0045, 0.931932, 0.344514, 1.0043, 0.931932, -0.344619, -1.02846, 1.13376, 0.511122, -1.02846, 1.5968, -0.511227, -1.02846, 1.74962, -0.477441, -1.0045, 1.99256, -0.344619, 1.0043, 1.64673, -0.539312, 1.02846, 1.13376, -0.511227, -1.0045, 1.07821, 0.539312, 1.0043, 0.931932, 0.344514, -1.02846, 1.5968, 0.511122, -1.02846, 1.74962, 0.477336, -1.0045, 1.99256, 0.344514, 1.0043, 1.99256, -0.344619, 1.02846, 1.74962, -0.477441, 1.02846, 1.5968, -0.511227, 1.02846, 1.13376, 0.511122, -1.0045, 1.64673, 0.539312, 1.0043, 1.07821, 0.539312, 1.0043, 1.99256, 0.344514, 1.02846, 1.74962, 0.477336, 1.02846, 1.5968, 0.511122, 1.0043, 1.64673, 0.539312 )
+
 [sub_resource type="ArrayMesh" id=2]
 resource_name = "Props_Bed_Cube001"
 lightmap_size_hint = Vector2( 30, 30 )
@@ -76,12 +79,16 @@ surfaces/0 = {
 "vertex_count": 524
 }
 
-[node name="Props_Bed" type="Spatial"]
+[node name="Props_Bed" type="StaticBody"]
 
 [node name="Props_Shelf_Tall" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.908623, 0 )
 use_in_baked_light = true
 mesh = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.908623, 0 )
+shape = SubResource( 4 )
 
 [node name="Props_Shelf_Tall001" type="MeshInstance" parent="."]
 use_in_baked_light = true
