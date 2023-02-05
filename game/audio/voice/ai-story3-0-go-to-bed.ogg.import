@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ai-story3-0-go-to-bed.ogg-d01bdfff063bca21fa85a97bbcd19d5d.oggstr"
+
+[deps]
+
+source_file="res://game/audio/voice/ai-story3-0-go-to-bed.ogg"
+dest_files=[ "res://.import/ai-story3-0-go-to-bed.ogg-d01bdfff063bca21fa85a97bbcd19d5d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

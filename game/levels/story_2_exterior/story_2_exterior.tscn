@@ -8,11 +8,11 @@
 [ext_resource path="res://game/objects/computer_ai/computer_ai.tscn" type="PackedScene" id=6]
 [ext_resource path="res://game/objects/zone_switch_area.tscn" type="PackedScene" id=7]
 [ext_resource path="res://game/levels/story_2_exterior/level_story_manager.gd" type="Script" id=8]
-[ext_resource path="res://game/audio/voice/ai-story2-start.ogg" type="AudioStream" id=9]
-[ext_resource path="res://game/audio/voice/ai-story2-encourage-walk.ogg" type="AudioStream" id=10]
-[ext_resource path="res://game/audio/voice/ai-story2-completed-job.ogg" type="AudioStream" id=11]
-[ext_resource path="res://game/audio/voice/ai-story2-puzzle-explainer.ogg" type="AudioStream" id=12]
-[ext_resource path="res://game/audio/voice/ai-story2-puzzle-progress.ogg" type="AudioStream" id=13]
+[ext_resource path="res://game/audio/voice/ai-story2-4-job-done.ogg" type="AudioStream" id=9]
+[ext_resource path="res://game/audio/voice/ai-story2-0-explain.ogg" type="AudioStream" id=10]
+[ext_resource path="res://game/audio/voice/ai-story2-1-over-here.ogg" type="AudioStream" id=11]
+[ext_resource path="res://game/audio/voice/ai-story2-3-replacements.ogg" type="AudioStream" id=12]
+[ext_resource path="res://game/audio/voice/ai-story2-2-powercell-plan.ogg" type="AudioStream" id=13]
 [ext_resource path="res://game/objects/computer_ai/computer_ai_line_trigger.tscn" type="PackedScene" id=14]
 [ext_resource path="res://addons/freepd.com/Space Ambience.mp3" type="AudioStream" id=15]
 [ext_resource path="res://addons/freesound.org/585801__colorscrimsontears__time-travel-future.wav" type="AudioStream" id=16]
@@ -56,12 +56,12 @@ modules_damaged = true
 
 [node name="ComputerAIStart" parent="." index="5" instance=ExtResource( 6 )]
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 6.98111, 69.0122, -1.97876 )
-audio_streams = [ ExtResource( 9 ) ]
+audio_streams = [ ExtResource( 10 ) ]
 play_first_audio_at_start = true
 
 [node name="ComputerAIMidway" parent="." index="6" instance=ExtResource( 6 )]
 transform = Transform( -0.671382, 0.52721, -0.520861, -0.635923, -0.0488982, 0.770202, 0.380589, 0.848327, 0.368094, 6.947, -30.5, 8.06 )
-audio_streams = [ ExtResource( 10 ) ]
+audio_streams = [ ExtResource( 11 ) ]
 
 [node name="AiSpeechTriggerStart" parent="ComputerAIMidway" index="3" instance=ExtResource( 14 )]
 transform = Transform( -0.671382, -0.635923, 0.380589, 0.52721, -0.0488982, 0.848327, -0.520861, 0.770202, 0.368094, -11.1814, -1.30077, 17.0338 )
@@ -83,7 +83,7 @@ shape = SubResource( 2 )
 
 [node name="ComputerAIRepairStation" parent="." index="7" instance=ExtResource( 6 )]
 transform = Transform( -1.81059e-08, 1, 6.18172e-08, 0.707107, -3.09086e-08, 0.707107, 0.707107, 5.65142e-08, -0.707107, 8.65978, -70.4411, 2.65755 )
-audio_streams = [ ExtResource( 12 ), ExtResource( 11 ) ]
+audio_streams = [ ExtResource( 13 ), ExtResource( 9 ) ]
 
 [node name="AiSpeechTrigger1" parent="ComputerAIRepairStation" index="3" instance=ExtResource( 14 )]
 computer_ai_path = NodePath("..")
@@ -98,7 +98,7 @@ bus = "SFX"
 
 [node name="ComputerAIRepairSpares" parent="." index="8" instance=ExtResource( 6 )]
 transform = Transform( 1.13133e-08, -1, -4.2222e-08, 0, -4.2222e-08, 1, -1, -1.13133e-08, 0, -8.66367, -74.7839, -0.930767 )
-audio_streams = [ ExtResource( 13 ) ]
+audio_streams = [ ExtResource( 12 ) ]
 terminal_visible = true
 
 [node name="AiSpeechTrigger" parent="ComputerAIRepairSpares" index="3" instance=ExtResource( 14 )]

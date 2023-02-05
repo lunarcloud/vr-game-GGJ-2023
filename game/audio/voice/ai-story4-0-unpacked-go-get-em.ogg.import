@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ai-story4-0-unpacked-go-get-em.ogg-b98813278a725c8a837e6035c39f4cd0.oggstr"
+
+[deps]
+
+source_file="res://game/audio/voice/ai-story4-0-unpacked-go-get-em.ogg"
+dest_files=[ "res://.import/ai-story4-0-unpacked-go-get-em.ogg-b98813278a725c8a837e6035c39f4cd0.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

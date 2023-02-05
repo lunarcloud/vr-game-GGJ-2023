@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ai-story1-3-good-luck.ogg-1c4615fdafa9c1fc32a6770579f54a45.oggstr"
+
+[deps]
+
+source_file="res://game/audio/voice/ai-story1-3-good-luck.ogg"
+dest_files=[ "res://.import/ai-story1-3-good-luck.ogg-1c4615fdafa9c1fc32a6770579f54a45.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

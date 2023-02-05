@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ai-story4-2-thanks.ogg-f277465c6deddf325695ad6de5a2d26f.oggstr"
+
+[deps]
+
+source_file="res://game/audio/voice/ai-story4-2-thanks.ogg"
+dest_files=[ "res://.import/ai-story4-2-thanks.ogg-f277465c6deddf325695ad6de5a2d26f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
