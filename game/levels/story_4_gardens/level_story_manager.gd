@@ -22,7 +22,7 @@ signal completed_mission()
 
 
 func _ready():
-	computer_ai.connect("finished_talking", self, "_on_player_left_ai", [], CONNECT_ONESHOT)
+	computer_ai.connect("finished_talking", self, "_on_player_left_ai", [])
 	var plants = get_tree().get_nodes_in_group("plant")
 	for plant in plants:
 		if plant.rotten == false:
@@ -31,9 +31,9 @@ func _ready():
 
 
 func _on_player_left_ai(_body):
-	ai_speech_trigger_instruction.enabled = false
-	yield(get_tree().create_timer(10.0), "timeout")
-	ai_speech_trigger_back_for_help.enabled = true
+	if ai_speech_trigger_instruction.enabled:
+		ai_speech_trigger_instruction.enabled = false
+		ai_speech_trigger_back_for_help.enabled = true
 
 
 func _on_plant_planted() -> void:

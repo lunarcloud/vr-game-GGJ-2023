@@ -405,7 +405,7 @@ voice_line_on_enter = 1
 enabled = false
 
 [node name="CollisionShape" type="CollisionShape" parent="ComputerAI/AiSpeechTriggerBackForHelp" index="0"]
-transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -0.255791, 4.76837e-07, 0.115892 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="ExitToCreditsA" parent="." index="5" instance=ExtResource( 15 )]

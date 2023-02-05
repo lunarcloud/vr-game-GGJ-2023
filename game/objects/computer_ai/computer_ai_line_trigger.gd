@@ -16,6 +16,9 @@ export var only_once := true
 
 export var enabled := true
 
+var _has_entered_while_enabled := false
+
+var _has_exited_while_enabled := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,10 +39,14 @@ func _ready():
 
 
 func _on_body_entered(_body) -> void:
-	if enabled:
-		computer_ai.play_line(voice_line_on_enter, face_on_enter)
+	if not enabled or _has_entered_while_enabled:
+		return
+	_has_entered_while_enabled = true
+	computer_ai.play_line(voice_line_on_enter, face_on_enter)
 
 
 func _on_body_exited(_body) -> void:
-	if enabled:
-		computer_ai.play_line(voice_line_on_exit, ComputerAiNpc.Faces.NoChange)
+	if not enabled or _has_exited_while_enabled:
+		return
+	_has_exited_while_enabled = true
+	computer_ai.play_line(voice_line_on_exit, ComputerAiNpc.Faces.NoChange)
