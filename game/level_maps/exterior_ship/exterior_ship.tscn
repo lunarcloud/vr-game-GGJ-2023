@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/bodies/Door_Single.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/meshlibrary/scifi_modular.meshlib" type="MeshLibrary" id=2]
@@ -11,10 +11,9 @@
 [ext_resource path="res://game/level_maps/exterior_ship/parts/ramp.tscn" type="PackedScene" id=9]
 [ext_resource path="res://game/level_maps/exterior_ship/parts/bridge.tscn" type="PackedScene" id=10]
 [ext_resource path="res://game/level_maps/exterior_ship/repair_puzzle_area.tscn" type="PackedScene" id=11]
-[ext_resource path="res://addons/quaternius-modular-scifi/modular/bodies/Props_ChestBottom.tscn" type="PackedScene" id=12]
+[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/Props_ChestBottom.tscn" type="PackedScene" id=12]
 [ext_resource path="res://game/level_maps/exterior_ship/parts/array.tscn" type="PackedScene" id=13]
 [ext_resource path="res://game/level_maps/exterior_ship/exterior_ship.gd" type="Script" id=14]
-[ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/Props_ComputerSmall.tscn" type="PackedScene" id=15]
 [ext_resource path="res://game/environments/spacestation_interior_env.tres" type="Environment" id=16]
 
 [sub_resource type="BoxShape" id=1]
@@ -209,9 +208,8 @@ transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 7
 
 [node name="MidwayObjects" type="Spatial" parent="Core"]
 
-[node name="Props_ComputerSmall2" parent="Core/MidwayObjects" instance=ExtResource( 15 )]
+[node name="Props_ComputerSmall" parent="Core/MidwayObjects" instance=ExtResource( 5 )]
 transform = Transform( -0.66815, 0.5, -0.550976, -0.636213, -3.78552e-08, 0.771513, 0.385757, 0.866025, 0.318106, 6.91378, -30.5, 8.00247 )
-skeleton = NodePath("../../TopObjects")
 
 [node name="Shaft" parent="Core" instance=ExtResource( 3 )]
 
@@ -220,11 +218,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -90, 0 )
 
 [node name="BottomObjects" type="Spatial" parent="Core"]
 
-[node name="Props_ChestBottom" parent="Core/BottomObjects" instance=ExtResource( 12 )]
-transform = Transform( -4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, 1, -1, 4.37114e-08, -4.37114e-08, -8.60025, -74.5, 0 )
-
 [node name="RepairPuzzleArea" parent="Core/BottomObjects" instance=ExtResource( 11 )]
 transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 8.66, -75, 0 )
+
+[node name="Props_ChestBottom" parent="Core/BottomObjects" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, 1, -1, 4.37114e-08, -4.37114e-08, -8.60025, -74.5, 0 )
 
 [node name="Arrays" type="Spatial" parent="Core"]
 

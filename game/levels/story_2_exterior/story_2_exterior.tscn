@@ -1,9 +1,8 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://game/level_maps/exterior_ship/exterior_ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/levels/level_base.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/godot-xr-tools/functions/movement_wall_walk.tscn" type="PackedScene" id=3]
-[ext_resource path="res://game/environments/spacestation_interior_env.tres" type="Environment" id=4]
 [ext_resource path="res://game/levels/story_2_exterior/good_modules.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/objects/computer_ai/computer_ai.tscn" type="PackedScene" id=6]
 [ext_resource path="res://game/objects/zone_switch_area.tscn" type="PackedScene" id=7]
@@ -31,7 +30,6 @@ extents = Vector3( 1.94998, 1.59439, 2.95915 )
 extents = Vector3( 1.70405, 1.68634, 1.76804 )
 
 [node name="Story2Exterior" instance=ExtResource( 2 )]
-environment = ExtResource( 4 )
 
 [node name="LevelStoryManager" type="Node" parent="." index="0"]
 script = ExtResource( 8 )

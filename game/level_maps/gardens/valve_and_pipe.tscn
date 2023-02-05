@@ -69,7 +69,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.941756 )
 transform = Transform( -8.74228e-09, 0, 0.2, 0, 1.06328, 0, -0.2, 0, -8.74228e-09, 0, 0, 0 )
 
 [node name="Water" type="MeshInstance" parent="WaterFillPipe"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64108, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.12197, 0 )
 mesh = SubResource( 4 )
 
 [node name="WallMount" parent="." instance=ExtResource( 3 )]
