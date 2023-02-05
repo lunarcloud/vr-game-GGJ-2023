@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/bodies/Door_Single.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/meshlibrary/scifi_modular.meshlib" type="MeshLibrary" id=2]
@@ -18,7 +18,10 @@
 [ext_resource path="res://game/environments/spacestation_interior_env.tres" type="Environment" id=16]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 15, 77, 22 )
+extents = Vector3( 15, 77, 5 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 12, 77, 12 )
 
 [node name="ExteriorShip" type="Spatial"]
 script = ExtResource( 14 )
@@ -28,76 +31,148 @@ environment = ExtResource( 16 )
 
 [node name="Gravity" type="Spatial" parent="."]
 
-[node name="Gravity1" type="Area" parent="Gravity"]
+[node name="GravityPlane1" type="Area" parent="Gravity"]
 collision_layer = 524292
 collision_mask = 0
+priority = 10.0
 space_override = 3
 gravity_vec = Vector3( -1, 0, 0 )
 gravity = 3.0
 
-[node name="CollisionShape" type="CollisionShape" parent="Gravity/Gravity1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0 )
+[node name="CollisionShape" type="CollisionShape" parent="Gravity/GravityPlane1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.66, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="Gravity2" type="Area" parent="Gravity"]
+[node name="GravityPlane2" type="Area" parent="Gravity"]
 transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0, 0, 0 )
 collision_layer = 524292
 collision_mask = 0
+priority = 10.0
 space_override = 3
 gravity_vec = Vector3( -0.5, 0, 0.866 )
 gravity = 3.0
 
-[node name="CollisionShape" type="CollisionShape" parent="Gravity/Gravity2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0 )
+[node name="CollisionShape" type="CollisionShape" parent="Gravity/GravityPlane2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.66, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="Gravity3" type="Area" parent="Gravity"]
+[node name="GravityPlane3" type="Area" parent="Gravity"]
 transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0, 0, 0 )
 collision_layer = 524292
 collision_mask = 0
+priority = 10.0
 space_override = 3
 gravity_vec = Vector3( 0.5, 0, 0.866 )
 gravity = 3.0
 
-[node name="CollisionShape" type="CollisionShape" parent="Gravity/Gravity3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0 )
+[node name="CollisionShape" type="CollisionShape" parent="Gravity/GravityPlane3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.66, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="Gravity4" type="Area" parent="Gravity"]
+[node name="GravityPlane4" type="Area" parent="Gravity"]
 transform = Transform( -1, 0, -1.49012e-07, 0, 1, 0, 1.49012e-07, 0, -1, 0, 0, 0 )
 collision_layer = 524292
 collision_mask = 0
+priority = 10.0
 space_override = 3
 gravity_vec = Vector3( 1, 0, 0 )
 gravity = 3.0
 
-[node name="CollisionShape" type="CollisionShape" parent="Gravity/Gravity4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0 )
+[node name="CollisionShape" type="CollisionShape" parent="Gravity/GravityPlane4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.66, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="Gravity5" type="Area" parent="Gravity"]
+[node name="GravityPlane5" type="Area" parent="Gravity"]
 transform = Transform( -0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, -0.5, 0, 0, 0 )
 collision_layer = 524292
 collision_mask = 0
+priority = 10.0
 space_override = 3
 gravity_vec = Vector3( 0.5, 0, -0.866 )
 gravity = 3.0
 
-[node name="CollisionShape" type="CollisionShape" parent="Gravity/Gravity5"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0 )
+[node name="CollisionShape" type="CollisionShape" parent="Gravity/GravityPlane5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.66, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="Gravity6" type="Area" parent="Gravity"]
+[node name="GravityPlane6" type="Area" parent="Gravity"]
 transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, 0, 0 )
 collision_layer = 524292
 collision_mask = 0
+priority = 10.0
 space_override = 3
 gravity_vec = Vector3( -0.5, 0, -0.866 )
 gravity = 3.0
 
-[node name="CollisionShape" type="CollisionShape" parent="Gravity/Gravity6"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0 )
+[node name="CollisionShape" type="CollisionShape" parent="Gravity/GravityPlane6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.66, 0, 0 )
 shape = SubResource( 1 )
+
+[node name="GravityCorner1" type="Area" parent="Gravity"]
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 0, 0 )
+priority = 5.0
+space_override = 3
+gravity_vec = Vector3( -0.866, 0, 0.5 )
+gravity = 2.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Gravity/GravityCorner1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.66, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="GravityCorner2" type="Area" parent="Gravity"]
+transform = Transform( -5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 0, 0, 0 )
+priority = 5.0
+space_override = 3
+gravity_vec = Vector3( 0, 0, 1 )
+gravity = 2.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Gravity/GravityCorner2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.66, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="GravityCorner3" type="Area" parent="Gravity"]
+transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 0, 0, 0 )
+priority = 5.0
+space_override = 3
+gravity_vec = Vector3( 0.866, 0, 0.5 )
+gravity = 2.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Gravity/GravityCorner3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.66, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="GravityCorner4" type="Area" parent="Gravity"]
+transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 0, 0, 0 )
+priority = 5.0
+space_override = 3
+gravity_vec = Vector3( 0.866, 0, -0.5 )
+gravity = 2.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Gravity/GravityCorner4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.66, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="GravityCorner5" type="Area" parent="Gravity"]
+transform = Transform( 1.78814e-07, 0, -1, 0, 1, 0, 1, 0, 1.78814e-07, 0, 0, 0 )
+priority = 5.0
+space_override = 3
+gravity_vec = Vector3( 0, 0, -1 )
+gravity = 2.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Gravity/GravityCorner5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.66, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="GravityCorner6" type="Area" parent="Gravity"]
+transform = Transform( 0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 0, 0, 0 )
+priority = 5.0
+space_override = 3
+gravity_vec = Vector3( -0.866, 0, -0.5 )
+gravity = 2.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Gravity/GravityCorner6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.66, 0, 0 )
+shape = SubResource( 2 )
 
 [node name="Core" type="Spatial" parent="."]
 
@@ -117,11 +192,11 @@ cell_center_x = false
 cell_center_y = false
 cell_center_z = false
 data = {
-"cells": PoolIntArray( 2, 0, 1048580, 3, 1, 29, 5, 1, 29, 131075, 1, 131116, 131077, 1, 131116, 4, 2, 655376, 6, 2, 22, 2, 65534, 1048598, 4, 65534, 16, 6, 65534, 22, 3, 65535, 29, 5, 65535, 29, 131075, 65535, 131116, 131077, 65535, 131116 )
+"cells": PoolIntArray( 2, 0, 1048580, 3, 1, 29, 5, 1, 29, 131075, 1, 131116, 131077, 1, 131116, 2, 2, 22, 4, 2, 655376, 6, 2, 22, 2, 65534, 1048598, 4, 65534, 16, 6, 65534, 22, 3, 65535, 29, 5, 65535, 29, 131075, 65535, 131116, 131077, 65535, 131116 )
 }
 __meta__ = {
 "_editor_clip_": 0,
-"_editor_floor_": Vector3( 0, 2, 0 )
+"_editor_floor_": Vector3( 0, 0, 0 )
 }
 
 [node name="TopObjects" type="Spatial" parent="Core"]
