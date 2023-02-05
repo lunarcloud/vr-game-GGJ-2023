@@ -34,7 +34,7 @@ shape = SubResource( 2 )
 
 [node name="ZoneSwitchArea" parent="." index="4" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5019, 2.22512, 10.1002 )
-enable = false
+zone_scene = "res://game/levels/story_3_quarters/story_3_quarters_b.tscn"
 
 [node name="CollisionShape" type="CollisionShape" parent="ZoneSwitchArea" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56701, 0, 0.110241 )
