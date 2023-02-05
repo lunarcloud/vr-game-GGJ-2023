@@ -5,7 +5,7 @@
 [ext_resource path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" type="PackedScene" id=5]
-[ext_resource path="res://game/level_maps/gardens/scripts/plant_rotten.gd" type="Script" id=6]
+[ext_resource path="res://game/level_maps/gardens/scripts/pickable_plant.gd" type="Script" id=6]
 
 [sub_resource type="ConvexPolygonShape" id=1]
 points = PoolVector3Array( -0.032212, -0.00350498, 0.0772732, 0.0401021, -5.24595e-05, 0.073676, -0.0249744, 0.0490341, 0.0441112, -0.0693371, 0.0129904, 0.0259555, -0.0709813, -0.0129355, 0.0374263, -0.0155088, -0.109047, 0.0290586, -0.0151092, -0.109191, 0.0290586, 0.0839884, -0.0166917, 0.0331807, 0.0770581, 0.0245627, 0.0260327, 0.0266104, 0.0445586, 0.0427217, 0.0027311, -0.0902176, 0.0357435, 0.0251967, 0.0241791, -0.0623221, -0.0448277, 0.0378773, -0.00127809, -0.0447663, 0.0378454, 9.59411e-05, -0.0717496, 0.0140933, -0.0257791, -0.0729943, -0.0149175, -0.0350113, -0.019965, -0.106521, 0.0256004, -0.0154319, -0.109175, 0.0289043, -0.01514, -0.109334, 0.028719, 0.0217546, -0.0972346, -0.00249773, 0.0831432, -0.0116568, -0.0391334, 0.0740002, 0.0208705, -0.0255475, -0.0265572, 0.0222451, -0.0626, 0.0353385, -0.0102822, -0.0804469, -0.0370985, -0.0105059, -0.0777297, -0.00731849, -0.114098, -0.0256247, -0.0255891, -0.0941017, -0.0155896, -0.00716483, -0.114225, -0.0253622, -0.00693433, -0.114241, -0.0252233, -0.00670384, -0.114241, -0.0251306, -0.00625821, -0.113906, -0.0254394, -0.00642724, -0.113778, -0.0257019, -0.00664237, -0.113746, -0.0258408, -0.00688823, -0.113762, -0.0259489 )
@@ -41,11 +41,13 @@ shape = SubResource( 1 )
 [node name="Plant1Rotten" type="MeshInstance" parent="." index="1"]
 mesh = SubResource( 3 )
 
-[node name="GrabPointHandLeft" parent="." index="2" instance=ExtResource( 4 )]
+[node name="PickedAudio" type="AudioStreamPlayer3D" parent="." index="2"]
+
+[node name="GrabPointHandLeft" parent="." index="3" instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0456978, 0.00832327, -0.1 )
 
-[node name="GrabPointHandRight" parent="." index="3" instance=ExtResource( 3 )]
+[node name="GrabPointHandRight" parent="." index="4" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.046, 0.008, -0.1 )
 
-[node name="GrabPointSnap" parent="." index="4" instance=ExtResource( 5 )]
+[node name="GrabPointSnap" parent="." index="5" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.045966, 0 )

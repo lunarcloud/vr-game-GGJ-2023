@@ -28,6 +28,7 @@ enum Faces {
 	NoChange = 5
 }
 
+signal finished_talking
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,6 +47,7 @@ func _ready():
 func _on_audio_finished() -> void:
 	if face_visible:
 		update_animation(Faces.Idle)
+		emit_signal("finished_talking")
 
 
 func _get_audio() -> AudioStream:
@@ -104,7 +106,9 @@ func _get_terminal_visible() -> bool:
 func play_line(index: int, expression: int) -> void:
 	update_animation(expression)
 	audio.stop()
-	if index >= 0:
+	if index < 0:
+		emit_signal("finished_talking") # this was forced on purpose
+	else:
 		_set_audio(audio_streams[index])
 		audio.play()
 
