@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/bodies/Door_Single.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/meshlibrary/scifi_modular.meshlib" type="MeshLibrary" id=2]
@@ -14,13 +14,45 @@
 [ext_resource path="res://addons/quaternius-modular-scifi/modular/mesh/Props_ChestBottom.tscn" type="PackedScene" id=12]
 [ext_resource path="res://game/level_maps/exterior_ship/parts/array.tscn" type="PackedScene" id=13]
 [ext_resource path="res://game/level_maps/exterior_ship/exterior_ship.gd" type="Script" id=14]
+[ext_resource path="res://game/objects/asteroids/Asteroid_2.tres" type="ArrayMesh" id=15]
 [ext_resource path="res://game/environments/spacestation_interior_env.tres" type="Environment" id=16]
+[ext_resource path="res://game/objects/helpers/scatter.gd" type="Script" id=17]
+[ext_resource path="res://game/objects/asteroids/Asteroid_1.tres" type="ArrayMesh" id=18]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 15, 77, 5 )
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 12, 77, 12 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "SlowRotate"
+length = 540.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Asteroid1s:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 540 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Asteroid2s:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 540 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, -360, 0 ) ]
+}
 
 [node name="ExteriorShip" type="Spatial"]
 script = ExtResource( 14 )
@@ -299,3 +331,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50, 0 )
 
 [node name="Ramp8" parent="Maze" instance=ExtResource( 9 )]
 transform = Transform( -0.5, -7.57104e-08, -0.866026, 0, -1, 8.74228e-08, -0.866026, 4.37114e-08, 0.5, 0, -53, 0 )
+
+[node name="Asteroids" type="Spatial" parent="."]
+
+[node name="Asteroid1s" type="Spatial" parent="Asteroids"]
+transform = Transform( 0.888364, 0, 0.45914, 0, 1, 0, -0.45914, 0, 0.888364, 0, 0, 0 )
+script = ExtResource( 17 )
+extend = Vector3( 100, 100, 100 )
+mesh = ExtResource( 18 )
+
+[node name="Asteroid2s" type="Spatial" parent="Asteroids"]
+transform = Transform( 0.888364, 0, -0.45914, 0, 1, 0, 0.45914, 0, 0.888364, 0, 0, 0 )
+script = ExtResource( 17 )
+extend = Vector3( 100, 100, 100 )
+mesh = ExtResource( 15 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Asteroids"]
+autoplay = "SlowRotate"
+anims/SlowRotate = SubResource( 3 )

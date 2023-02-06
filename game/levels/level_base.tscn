@@ -60,6 +60,8 @@ jump_button_id = 7
 crouch_button = 1
 
 [node name="PlayerBody" parent="ARVROrigin" index="3" instance=ExtResource( 5 )]
+player_radius = 0.2
+player_height_min = 0.2
 
 [node name="MovementSprint" parent="ARVROrigin" index="4" instance=ExtResource( 2 )]
 

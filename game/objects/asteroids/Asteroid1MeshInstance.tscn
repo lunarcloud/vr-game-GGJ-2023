@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://game/objects/asteroids/Asteroid_1.tres" type="ArrayMesh" id=1]
+
+[node name="asteroid_1" type="MeshInstance"]
+use_in_baked_light = true
+mesh = ExtResource( 1 )

@@ -63,7 +63,7 @@ unit_db = -20.0
 bus = "SFX"
 
 [node name="WaterFillPipe" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.941756 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.159343, 0, 0.941756 )
 
 [node name="Props_Pod" parent="WaterFillPipe" instance=ExtResource( 2 )]
 transform = Transform( -8.74228e-09, 0, 0.2, 0, 1.06328, 0, -0.2, 0, -8.74228e-09, 0, 0, 0 )
@@ -73,11 +73,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.12197, 0 )
 mesh = SubResource( 4 )
 
 [node name="WallMount" parent="." instance=ExtResource( 3 )]
-transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.21, 1.29363, 0 )
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.21, 1.35416, 0 )
 skeleton = NodePath("")
 
 [node name="ValveAxis" type="Spatial" parent="."]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.194619, 1.32551, 0 )
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.194619, 1.38604, 0 )
 
 [node name="InteractableHinge" parent="ValveAxis" instance=ExtResource( 7 )]
 hinge_limit_min = 0.0

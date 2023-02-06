@@ -32,7 +32,7 @@ signal finished_talking()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	update_animation(Faces.Idle)
+	update_animation(Faces.Idle if face_visible else Faces.Off)
 
 	if Engine.editor_hint:
 		return
@@ -71,11 +71,10 @@ func _set_audio(new_value: AudioStream) -> void:
 
 
 func set_face_visible(new_value : bool) -> void:
+	face_visible = new_value
 	if not is_instance_valid(face):
 		face = $Face
-	if not new_value and current_audio != null:
-		face_visible = true
-		return
+
 	if is_instance_valid(face):
 		face.visible = new_value
 

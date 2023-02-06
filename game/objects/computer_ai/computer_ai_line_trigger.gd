@@ -50,3 +50,4 @@ func _on_body_exited(_body) -> void:
 		return
 	_has_exited_while_enabled = true
 	computer_ai.play_line(voice_line_on_exit, ComputerAiNpc.Faces.NoChange)
+

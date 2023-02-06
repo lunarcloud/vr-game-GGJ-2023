@@ -8,6 +8,7 @@ onready var animation_player = $AnimationPlayer
 export var is_full := false
 
 signal water_level_changed(percent)
+signal water_full(is_full)
 
 func change_water_level(amount: float) -> void:
 	if amount < 0 or amount > 1:
@@ -33,6 +34,7 @@ func change_water_level(amount: float) -> void:
 		water_flowing_sound.stop()
 
 	emit_signal("water_level_changed", amount)
+	emit_signal("water_full", now_full)
 
 
 func _on_valve_hinge_moved(angle):

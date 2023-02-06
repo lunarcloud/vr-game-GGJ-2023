@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/objects/force_field/force_field_shader.tres" type="Material" id=2]
@@ -25,6 +25,8 @@
 [ext_resource path="res://game/level_maps/gardens/materials/plant_2_rotten_material.tres" type="Material" id=23]
 [ext_resource path="res://game/level_maps/gardens/materials/valve_material.tres" type="Material" id=24]
 [ext_resource path="res://game/level_maps/gardens/materials/water_material.tres" type="Material" id=25]
+[ext_resource path="res://game/objects/asteroids/Asteroid2MeshInstance.tscn" type="PackedScene" id=26]
+[ext_resource path="res://game/objects/asteroids/Asteroid1MeshInstance.tscn" type="PackedScene" id=27]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 0.001, 0.001 )
@@ -150,3 +152,7 @@ material/0 = ExtResource( 14 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -2 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 18 )
+
+[node name="asteroid_2" parent="." index="29" instance=ExtResource( 26 )]
+
+[node name="asteroid_1" parent="." index="30" instance=ExtResource( 27 )]
