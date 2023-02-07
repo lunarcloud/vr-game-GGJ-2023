@@ -11,4 +11,5 @@ main_scene = "res://game/levels/story_1_landed/story_1_landed.tscn"
 environment = ExtResource( 3 )
 
 [node name="LoadingScreen" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0 )
 splash_screen = ExtResource( 2 )
