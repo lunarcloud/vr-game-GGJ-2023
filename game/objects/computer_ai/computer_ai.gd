@@ -13,6 +13,8 @@ export(Array, AudioStream) var audio_streams : Array
 
 export var play_first_audio_at_start := false
 
+export var autoplay_delay := 0.0
+
 # Whether you want the computer to be initially active
 export var face_visible := true setget set_face_visible, _get_face_visible
 
@@ -41,6 +43,7 @@ func _ready():
 	audio.connect("finished", self, "_on_audio_finished")
 
 	if play_first_audio_at_start:
+		yield(get_tree().create_timer(autoplay_delay), "timeout")
 		play_line(0, Faces.Talk)
 
 
