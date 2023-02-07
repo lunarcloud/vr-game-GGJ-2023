@@ -2,7 +2,7 @@ extends Spatial
 
 signal cooldown_finished
 
-var countdown = 20
+var countdown := 4
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

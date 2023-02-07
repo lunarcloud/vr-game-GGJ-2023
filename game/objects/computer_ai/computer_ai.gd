@@ -13,7 +13,7 @@ export(Array, AudioStream) var audio_streams : Array
 
 export var play_first_audio_at_start := false
 
-export var autoplay_delay := 1.0
+export var autoplay_delay := 2.0
 
 # Whether you want the computer to be initially active
 export var face_visible := true setget set_face_visible, _get_face_visible
