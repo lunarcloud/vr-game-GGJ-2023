@@ -200,7 +200,7 @@ func _on_snap_zone_body_entered(target: Spatial) -> void:
 
 	# If this snap zone is configured to snap objects that are dropped, then
 	# start listening for the objects dropped signal
-	if snap_mode == SnapMode.DROPPED:
+	if snap_mode == SnapMode.DROPPED and target.has_signal("dropped"):
 		target.connect("dropped", self, "_on_target_dropped")
 
 	# Show highlight when something could be snapped
@@ -214,7 +214,8 @@ func _on_snap_zone_body_exited(target: Spatial) -> void:
 	_object_in_grab_area.erase(target)
 
 	# Stop listening for dropped signals
-	target.disconnect("dropped", self, "_on_target_dropped")
+	if target.has_signal("dropped") and target.is_connected("dropped", self, "_on_target_dropped"):
+		target.disconnect("dropped", self, "_on_target_dropped")
 
 	# Hide highlight when nothing could be snapped
 	if _object_in_grab_area.empty():

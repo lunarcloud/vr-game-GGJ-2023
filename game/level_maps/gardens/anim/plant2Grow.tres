@@ -1,0 +1,29 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "Grow"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlantMesh:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 2, 0.5 ),
+"update": 0,
+"values": [ Vector3( 1, 1, 1 ), Vector3( 4, 4, 4 ), Vector3( 3, 3, 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PlantMesh:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.04387, 0 ), Vector3( 0, 0.2, 0 ), Vector3( 0, 0.15, 0 ) ]
+}

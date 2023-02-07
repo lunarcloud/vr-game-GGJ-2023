@@ -1,7 +1,5 @@
 extends Spatial
 
-onready var water = $WaterFillPipe/Water
-onready var valve = $ValveAssembly/Valve
 onready var water_flowing_sound = $WaterFlowingSound
 onready var animation_player = $AnimationPlayer
 

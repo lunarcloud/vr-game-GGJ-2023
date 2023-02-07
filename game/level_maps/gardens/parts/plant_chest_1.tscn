@@ -5,32 +5,44 @@
 
 [node name="PlantChest1" instance=ExtResource( 1 )]
 
-[node name="PlantSnap1" parent="." index="3"]
+[node name="PlantSnap1" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.406803, -0.15 )
 initial_object = NodePath("Plant1")
 
 [node name="Plant1" parent="PlantSnap1" index="2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0209917, 0 )
 
-[node name="PlantSnap2" parent="." index="4"]
+[node name="PlantSnap2" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.406803, -0.15 )
 initial_object = NodePath("Plant1")
 
 [node name="Plant1" parent="PlantSnap2" index="2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0209917, 0 )
 
-[node name="PlantSnap3" parent="." index="5"]
+[node name="PlantSnap3" parent="." index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.406803, -0.15 )
 initial_object = NodePath("Plant1")
 
 [node name="Plant1" parent="PlantSnap3" index="2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0209917, 0 )
 
-[node name="PlantSnap4" parent="." index="6"]
+[node name="PlantSnap4" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.406803, 0.15 )
 initial_object = NodePath("Plant1")
 
 [node name="Plant1" parent="PlantSnap4" index="2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0209917, 0 )
 
-[node name="PlantSnap5" parent="." index="7"]
+[node name="PlantSnap5" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.406803, 0.15 )
 initial_object = NodePath("Plant1")
 
 [node name="Plant1" parent="PlantSnap5" index="2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0209917, 0 )
 
-[node name="PlantSnap6" parent="." index="8"]
+[node name="PlantSnap6" parent="." index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.406803, 0.15 )
 initial_object = NodePath("Plant1")
 
 [node name="Plant1" parent="PlantSnap6" index="2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0209917, 0 )

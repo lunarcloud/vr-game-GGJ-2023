@@ -9,6 +9,7 @@ export var enable := true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# warning-ignore:return_value_discarded
 	connect("body_entered", self, "_on_body_entered")
 
 

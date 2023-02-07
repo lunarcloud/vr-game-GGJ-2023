@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://addons/godot-xr-tools/objects/pickable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" type="PackedScene" id=2]
@@ -7,9 +7,54 @@
 [ext_resource path="res://game/level_maps/gardens/materials/plant_1_material.tres" type="Material" id=5]
 [ext_resource path="res://game/level_maps/gardens/scripts/pickable_plant.gd" type="Script" id=6]
 [ext_resource path="res://addons/freesound.org/389590__jofae__swing-woosh.wav" type="AudioStream" id=7]
+[ext_resource path="res://game/level_maps/gardens/anim/plant1Grow.tres" type="Animation" id=8]
+[ext_resource path="res://game/level_maps/gardens/anim/plantJustPlanted.tres" type="Animation" id=9]
 
-[sub_resource type="ConvexPolygonShape" id=2]
-points = PoolVector3Array( 0.00211449, -0.0824985, -0.151301, 0.00348538, -0.0825223, -0.151273, 0.00348538, -0.0829033, -0.150855, 0.00208594, -0.0828557, -0.150883, -0.142571, -0.0469512, -0.00476846, -0.142856, -0.0464512, -0.00479637, -0.0230469, -0.0544512, -0.129642, -0.0150501, 0.0985236, -0.0283812, 0.0287324, -0.0557131, -0.128163, 0.148856, -0.016642, -0.00178199, 0.0373004, -0.12507, -0.0038753, -0.00571094, -0.142141, -0.0390711, -0.00579663, -0.142307, -0.038792, -0.00591087, -0.141998, -0.0394339, -0.0063107, -0.142141, -0.0392944, -0.00691047, -0.142569, -0.0386524, -0.00688191, -0.142117, -0.0395177, -0.00708182, -0.142403, -0.0390153, -0.0164209, -0.14095, 0.0323532, -0.142628, -0.0469036, -0.00340082, -0.111754, -0.0285943, -0.029386, -0.142885, -0.0464036, -0.00342873, -0.020248, 0.0978331, -0.0248644, -0.0181917, 0.0992855, -0.0272089, 0.0360152, 0.100428, -0.00228438, 0.0352727, 0.0993569, -0.00554997, 0.115126, -0.0120706, -0.0288557, 0.148884, -0.0160706, -0.00175408, 0.14877, -0.0167372, -0.000414342, 0.037329, -0.12507, -0.00365202, -0.00593942, -0.14245, -0.0385408, -0.00633927, -0.142593, -0.0384012, -0.00662486, -0.142593, -0.038485, -0.00985216, -0.142807, 0.0354234, -0.0163353, -0.140974, 0.0322974, -0.0103091, -0.142593, 0.0359816, -0.010509, -0.142427, 0.036484, -0.0164209, -0.140927, 0.0324369, -0.0164209, -0.140879, 0.0325207, -0.0163638, -0.140855, 0.0326044, 0.00148617, -0.00861827, 0.133754, -0.113811, -0.0269276, 0.0223611, -0.0150215, 0.0969045, 0.0238682, -0.016935, 0.0958807, 0.0214121, 0.00145762, -0.00804684, 0.133754, 0.0349871, 0.0993569, 0.000869572, 0.148799, -0.0161658, -0.000386432, 0.0372433, -0.12507, -0.00348455, 0.00285706, -0.00852303, 0.13381, 0.0107967, -0.12076, 0.0439363, -0.00945231, -0.142641, 0.0358979, -0.00959511, -0.142712, 0.0357025, -0.00993782, -0.142593, 0.0362607, -0.0101092, -0.142379, 0.0365678, 0.00282849, -0.0079516, 0.133838, -0.012137, 0.0958807, 0.0250405, -0.00990927, -0.142403, 0.0365399, -0.00959511, -0.142498, 0.0362607 )
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlantMesh:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PlantMesh:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PlantMesh:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.067226, 0 ) ]
+}
+
+[sub_resource type="CapsuleShape" id=2]
+radius = 0.0707636
+height = 0.0247857
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.0670134, 0.0330781, 0.0701527 )
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Plant_1_Joined_Roundcube001"
@@ -30,26 +75,39 @@ surfaces/0 = {
 collision_layer = 4
 collision_mask = 7
 mode = 1
+gravity_scale = 0.4
 script = ExtResource( 6 )
 picked_up_layer = 65536
 release_mode = 0
 ranged_grab_method = 0
 rotten = false
 
-[node name="CollisionShape" parent="." index="0"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
+autoplay = "RESET"
+anims/Grow = ExtResource( 8 )
+anims/JustPlanted = ExtResource( 9 )
+anims/RESET = SubResource( 4 )
+
+[node name="CollisionShape" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.0704128, 0 )
 shape = SubResource( 2 )
 
-[node name="Plant1" type="MeshInstance" parent="." index="1"]
+[node name="CollisionShape2" type="CollisionShape" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0236268, 0 )
+shape = SubResource( 3 )
+
+[node name="PlantMesh" type="MeshInstance" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.067226, 0 )
 mesh = SubResource( 1 )
 
-[node name="GrabPointHandLeft" parent="." index="2" instance=ExtResource( 2 )]
-transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0479208, 0.0818116, -0.107852 )
+[node name="GrabPointHandLeft" parent="." index="4" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0448406, 0.112939, -0.107852 )
 
-[node name="GrabPointHandRight" parent="." index="3" instance=ExtResource( 3 )]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.048, 0.082, -0.108 )
+[node name="GrabPointHandRight" parent="." index="5" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.0199489, 0.113127, -0.108 )
 
-[node name="GrabPointSnap" parent="." index="4" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0715042, 0 )
+[node name="GrabPointSnap" parent="." index="6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0 )
 
-[node name="PickedAudio" type="AudioStreamPlayer3D" parent="." index="5"]
+[node name="PickedAudio" type="AudioStreamPlayer3D" parent="." index="7"]
 stream = ExtResource( 7 )

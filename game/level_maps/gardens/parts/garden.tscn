@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://game/level_maps/gardens/materials/dirt.tres" type="Material" id=1]
 [ext_resource path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/ambientcg.com/SheetMetal001/SheetMetal001_1K_Color.png" type="Texture" id=3]
 [ext_resource path="res://addons/godot-xr-tools/objects/snap_zone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/level_maps/gardens/parts/garden.gd" type="Script" id=5]
 
 [sub_resource type="SpatialMaterial" id=4]
 albedo_texture = ExtResource( 3 )
@@ -41,6 +42,7 @@ surfaces/1 = {
 points = PoolVector3Array( 4, 0.0457407, 8, 4, 0, 8, 4, 0.0457407, -8, 3.6993, 0.145754, 7.6993, -4, 0.0457407, 8, -4, 0, 8, 4, 0, -8, -4, 0.0457407, -8, 3.6993, 0.145754, -7.70086, -3.70008, 0.145754, 7.6993, -4, 0, -8, -3.70008, 0.145754, -7.70086 )
 
 [node name="Garden" type="StaticBody"]
+script = ExtResource( 5 )
 
 [node name="Garden" type="MeshInstance" parent="."]
 use_in_baked_light = true
@@ -50,55 +52,55 @@ mesh = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="SnapZone1" parent="." groups=["goal_snap"] instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.144946, -4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.149486, -4 )
 collision_layer = 4
 collision_mask = 65540
-grab_distance = 0.5
+grab_distance = 1.0
 snap_require = "plant"
 
 [node name="HighlightRing" parent="SnapZone1" instance=ExtResource( 2 )]
 
 [node name="SnapZone2" parent="." groups=["goal_snap"] instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.144946, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.149486, 0 )
 collision_layer = 4
 collision_mask = 65540
-grab_distance = 0.5
+grab_distance = 1.0
 snap_require = "plant"
 
 [node name="HighlightRing" parent="SnapZone2" instance=ExtResource( 2 )]
 
 [node name="SnapZone3" parent="." groups=["goal_snap"] instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.144946, 4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.149486, 4 )
 collision_layer = 4
 collision_mask = 65540
-grab_distance = 0.5
+grab_distance = 1.0
 snap_require = "plant"
 
 [node name="HighlightRing" parent="SnapZone3" instance=ExtResource( 2 )]
 
 [node name="SnapZone4" parent="." groups=["goal_snap"] instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.144946, -4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.149486, -4 )
 collision_layer = 4
 collision_mask = 65540
-grab_distance = 0.5
+grab_distance = 1.0
 snap_require = "plant"
 
 [node name="HighlightRing" parent="SnapZone4" instance=ExtResource( 2 )]
 
 [node name="SnapZone5" parent="." groups=["goal_snap"] instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.144946, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.149486, 0 )
 collision_layer = 4
 collision_mask = 65540
-grab_distance = 0.5
+grab_distance = 1.0
 snap_require = "plant"
 
 [node name="HighlightRing" parent="SnapZone5" instance=ExtResource( 2 )]
 
 [node name="SnapZone6" parent="." groups=["goal_snap"] instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.144946, 4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.149486, 4 )
 collision_layer = 4
 collision_mask = 65540
-grab_distance = 0.5
+grab_distance = 1.0
 snap_require = "plant"
 
 [node name="HighlightRing" parent="SnapZone6" instance=ExtResource( 2 )]

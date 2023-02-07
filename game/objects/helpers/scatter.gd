@@ -51,15 +51,15 @@ func _set_dirty():
 func _update_multimesh():
 	if !dirty:
 		return
-	
+
 	multi_mesh.instance_count = instance_count
 	for i in instance_count:
-		var t : Transform
+		var t := Transform.IDENTITY
 		var s : float = rand_range(min_scale, max_scale)
 		t.basis = Basis().rotated(Vector3.UP, rand_range(-PI, PI)).scaled(Vector3(s, s, s))
 		t.origin = Vector3(rand_range(-extend.x, extend.x), rand_range(-extend.y, extend.y), rand_range(-extend.z, extend.z))
 		multi_mesh.set_instance_transform(i, t)
-	
+
 	dirty = false
 
 # Called when the node enters the scene tree for the first time.
@@ -67,12 +67,12 @@ func _ready():
 	multi_mesh = MultiMesh.new()
 	multi_mesh.transform_format = MultiMesh.TRANSFORM_3D
 	multi_mesh.mesh = mesh
-	
+
 	multi_mesh_instance = MultiMeshInstance.new()
 	multi_mesh_instance.multimesh = multi_mesh
 	multi_mesh_instance.material_override = material_override
 	add_child(multi_mesh_instance)
-	
+
 	# First time creating our multimesh
 	_update_multimesh()
 
