@@ -403,6 +403,7 @@ config/description="You're a space-faring gardener, a maintainer of interstellar
 This is a your latest job."
 run/main_scene="res://game/main.tscn"
 config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
