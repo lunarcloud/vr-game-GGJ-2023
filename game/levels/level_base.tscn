@@ -19,7 +19,6 @@
 environment = ExtResource( 12 )
 
 [node name="GameShaderCache" parent="ARVROrigin/ARVRCamera" index="0" instance=ExtResource( 13 )]
-countdown = 5
 
 [node name="LeftHand" parent="ARVROrigin/LeftHand" index="0" instance=ExtResource( 6 )]
 transform = Transform( 0.990268, 0, -0.139173, 0, 1, 0, 0.139173, 0, 0.990268, -0.0295391, -0.051, 0.134 )

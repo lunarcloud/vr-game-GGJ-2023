@@ -3,6 +3,9 @@ extends Spatial
 
 export var countdown := 4
 
+# attempt to hide it into the blind spot if player is looking at center
+var eye_blind_spot := Vector2(0.04, -0.01)
+
 export var mesh_size : float = 0.001 setget _update_mesh_size
 
 export(Array, Material) var materials := [] setget _update_materials
@@ -65,8 +68,8 @@ func _create_material_nodes() -> void:
 	add_child(material_meshes)
 	material_meshes.set_owner(self)
 	material_meshes.translation = Vector3(
-		(-0.5 * grid_space * grid_columns) + (grid_space / 2),
-		(-0.5 * grid_space * grid_rows) + (grid_space / 2),
+		(-0.5 * grid_space * grid_columns) + (grid_space / 2) + eye_blind_spot.x,
+		(-0.5 * grid_space * grid_rows) + (grid_space / 2) + eye_blind_spot.y,
 		-1 * (near_clip + 0.001) # farther than near clipping
 	)
 
@@ -81,11 +84,6 @@ func _create_material_nodes() -> void:
 		node.mesh = common_mesh
 		node.set_surface_material(0,  materials[index])
 		node.rotation = Vector3(deg2rad(90), 0, 0)
-		node.translation = grid_space * Vector3(
-			index / grid_columns,
-			index % grid_rows,
-			0
-		)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
