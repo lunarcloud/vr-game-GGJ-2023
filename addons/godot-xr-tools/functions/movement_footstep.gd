@@ -3,10 +3,11 @@ class_name XRToolsMovementFootstep
 extends XRToolsMovementProvider
 
 
-## XRTools Movement Foot Step Player
+## XR Tools Movement Provider for Footsteps
 ##
-## This movement provider detects walking on different surfaces, and plays audio
-## sounds associated with walking on the surfaces.
+## This movement provider detects walking on different surfaces.
+## It plays audio sounds associated with the surface the player is 
+## currently walking on.
 
 
 # Some value indicating the player wants to walk at a moderate speed
@@ -33,7 +34,7 @@ export(float, 0.0, 4096.0) var audio_distance : float = 10.0
 
 
 # step time and rate
-var step_rate = 0.5
+var step_rate = 1.0
 var step_time = 0.0
 
 # Last on_ground state of the player
@@ -87,13 +88,13 @@ func _ready():
 	player_body.connect("player_jumped", self, "_on_player_jumped")
 
 
-func physics_movement(_delta: float, player_body: XRToolsPlayerBody, disabled: bool):
+func physics_movement(_delta: float, player_body: XRToolsPlayerBody, _disabled: bool):
 	# Update the spatial location of the foot
 	_update_foot_spatial()
-	
+
 	# Update the ground audio information
 	_update_ground_audio()
-	
+
 	# Detect landing on ground
 	if not _old_on_ground and player_body.on_ground:
 		# Play the ground hit sound
@@ -104,9 +105,9 @@ func physics_movement(_delta: float, player_body: XRToolsPlayerBody, disabled: b
 	if not player_body.on_ground:
 		step_time = 0
 		return
-	
+
 	# Count down the step timer, and skip if silenced
-	step_time = max(0, step_time - _delta)
+	step_time = max(0, step_time - _delta * player_body.ground_control_velocity.length())
 	if step_time > 0:
 		return
 
@@ -148,9 +149,7 @@ func _update_ground_audio() -> void:
 
 	# Find the surface audio for the ground (if any)
 	var ground_audio : XRToolsSurfaceAudio = XRTools.find_child(
-			_ground_node,
-			"*", 
-			"XRToolsSurfaceAudio")
+		_ground_node, "*", "XRToolsSurfaceAudio")
 	if ground_audio:
 		_ground_node_audio_type = ground_audio.surface_audio_type
 	else:

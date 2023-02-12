@@ -201,7 +201,7 @@ func _on_snap_zone_body_entered(target: Spatial) -> void:
 	# If this snap zone is configured to snap objects that are dropped, then
 	# start listening for the objects dropped signal
 	if snap_mode == SnapMode.DROPPED and target.has_signal("dropped"):
-		target.connect("dropped", self, "_on_target_dropped")
+		target.connect("dropped", self, "_on_target_dropped", [], CONNECT_DEFERRED)
 
 	# Show highlight when something could be snapped
 	if not is_instance_valid(picked_up_object):
@@ -269,7 +269,7 @@ func _update_snap_mode() -> void:
 
 			# Start monitoring all objects in range for drop
 			for o in _object_in_grab_area:
-				o.connect("dropped", self, "_on_target_dropped")
+				o.connect("dropped", self, "_on_target_dropped", [], CONNECT_DEFERRED)
 
 		SnapMode.RANGE:
 			# Enable _process to scan for RANGE pickups
@@ -282,12 +282,6 @@ func _update_snap_mode() -> void:
 
 # Called when a target in our grab area is dropped
 func _on_target_dropped(target: Spatial) -> void:
-	# Try grabbing the dropped object next frame
-	call_deferred("_try_grab_dropped", target)
-
-
-# Called to try and grab a recently dropped object
-func _try_grab_dropped(target: Spatial) -> void:
 	# Skip if not enabled
 	if not enabled:
 		return
