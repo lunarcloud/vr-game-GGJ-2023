@@ -3,6 +3,7 @@
 [ext_resource path="res://addons/godot-xr-tools/functions/function_teleport.tscn" type="PackedScene" id=1]
 
 [node name="FunctionTeleportGameVersion" instance=ExtResource( 1 )]
+rotation_with_sticks = false
 
 [node name="Player_figure" parent="Target" index="0"]
 visible = false

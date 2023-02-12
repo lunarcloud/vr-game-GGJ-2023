@@ -86,7 +86,8 @@ text = "Move Joysticks : Walk
 Click JoySticks : Run
 Trigger : Teleport
 Grab :Pick Up
-A Button : Jump"
+A+X : Jump
+B+Y: Crouch"
 font = ExtResource( 12 )
 autowrap = true
 

@@ -1,3 +1,4 @@
+class_name RepairModule
 extends XRToolsPickable
 
 onready var props_capsule = $Props_Capsule
@@ -26,6 +27,7 @@ var _grabbed_by_hand := false
 
 signal insert_changed(value)
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	props_capsule.set_surface_material(1, normal_accent)
@@ -33,6 +35,12 @@ func _ready():
 	# warning-ignore:return_value_discarded
 	connect("picked_up", self, "_on_picked_up")
 	connect("dropped", self, "_on_dropped")
+
+
+
+# Add support for is_class
+func is_class(name : String) -> bool:
+	return name == "RepairModule" or .is_class(name)
 
 
 func _update_accent() -> void:
@@ -61,4 +69,5 @@ func _on_picked_up(_pickable) -> void:
 func _on_dropped(_pickable) -> void:
 	if damaged and _grabbed_by_hand:
 		yield(get_tree().create_timer(1.0), "timeout")
-		drop_and_free()
+		if is_instance_valid(self):
+			drop_and_free()

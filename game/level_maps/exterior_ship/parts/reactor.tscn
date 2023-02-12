@@ -25,7 +25,6 @@ radius = 40.0
 [node name="Reactor" type="StaticBody"]
 
 [node name="Reactor" type="MeshInstance" parent="."]
-use_in_baked_light = true
 mesh = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]

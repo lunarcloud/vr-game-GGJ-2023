@@ -64,18 +64,17 @@ script = ExtResource( 14 )
 environment = ExtResource( 16 )
 
 [node name="Lighting" type="Spatial" parent="."]
-
-[node name="BakedLightmap" type="BakedLightmap" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2596, 0, 0 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Lighting"]
-transform = Transform( 0.965926, 2.15901e-08, 0.258819, -0.0669873, 0.965926, 0.25, -0.25, -0.258819, 0.933013, 0, 0, 24 )
+transform = Transform( 0.74065, -0.11975, 0.661134, -0.0669873, 0.965926, 0.25, -0.668544, -0.22945, 0.707391, 0, 0, 0 )
 
 [node name="ColorLight1" type="DirectionalLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.45918, 0, 24 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 4.40206 )
 light_color = Color( 0.380392, 0.305882, 0.490196, 1 )
 
 [node name="ColorLight2" type="DirectionalLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.19427, 0, 24 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -5.4012 )
 light_color = Color( 0.219608, 0.427451, 0.462745, 1 )
 
 [node name="Gravity" type="Spatial" parent="."]
