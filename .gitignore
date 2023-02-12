@@ -24,6 +24,7 @@ script_templates/
 *.bak
 *.kate-swp
 *~
+*.blend1
 
 # Ignore Mac Thumbnails
 .DS_Store

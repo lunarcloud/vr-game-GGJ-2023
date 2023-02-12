@@ -37,6 +37,7 @@ signal request_reset_scene
 
 export var environment : Environment
 
+
 ## Interface
 
 
@@ -125,6 +126,3 @@ func load_scene(p_scene_path : String) -> void:
 func reset_scene() -> void:
 	emit_signal("request_reset_scene")
 
-
-func _on_GoodModules_all_modules_good():
-	pass # Replace with function body.

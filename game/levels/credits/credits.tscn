@@ -77,6 +77,12 @@ tracks/3/keys = {
 [node name="PreviewEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = ExtResource( 2 )
 
+[node name="FunctionTeleportGameVersion" parent="ARVROrigin/LeftHand" index="5"]
+enabled = false
+
+[node name="FunctionTeleportGameVersion" parent="ARVROrigin/RightHand" index="6"]
+enabled = false
+
 [node name="PlayerBody" parent="ARVROrigin" index="3"]
 enabled = false
 
