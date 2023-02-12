@@ -32,6 +32,9 @@ export(float, 0.1, 100.0) var audio_size : float = 3.0
 ## Audio max distance
 export(float, 0.0, 4096.0) var audio_distance : float = 10.0
 
+## Default XRToolsSurfaceAudioType when not overridden
+export var default_surface_audio_type : Resource
+
 
 # step time and rate
 var step_rate = 1.0
@@ -86,6 +89,16 @@ func _ready():
 
 	# Listen for the player jumping
 	player_body.connect("player_jumped", self, "_on_player_jumped")
+
+
+# This method checks for configuration issues.
+func _get_configuration_warning():
+	# Verify hit sound
+	if default_surface_audio_type and !default_surface_audio_type is XRToolsSurfaceAudioType:
+		return "Default surface audio type is not an XRToolsSurfaceAudioType"
+
+	# No configuration issues detected
+	return ""
 
 
 func physics_movement(_delta: float, player_body: XRToolsPlayerBody, _disabled: bool):
@@ -153,7 +166,7 @@ func _update_ground_audio() -> void:
 	if ground_audio:
 		_ground_node_audio_type = ground_audio.surface_audio_type
 	else:
-		_ground_node_audio_type = null
+		_ground_node_audio_type = default_surface_audio_type
 
 
 # Play the hit sound made when the player lands on the ground
