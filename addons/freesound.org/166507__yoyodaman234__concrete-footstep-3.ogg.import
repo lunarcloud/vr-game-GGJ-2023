@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/166507__yoyodaman234__concrete-footstep-3.ogg-86ca24943d5970467e582eacf7b4518e.oggstr"
+
+[deps]
+
+source_file="res://addons/freesound.org/166507__yoyodaman234__concrete-footstep-3.ogg"
+dest_files=[ "res://.import/166507__yoyodaman234__concrete-footstep-3.ogg-86ca24943d5970467e582eacf7b4518e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
