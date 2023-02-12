@@ -45,6 +45,7 @@ export (int, LAYERS_3D_PHYSICS) var valid_teleport_mask : int = ~0
 ## Teleport button
 export (XRTools.Buttons) var teleport_button : int = XRTools.Buttons.VR_TRIGGER
 
+export var rotation_with_sticks := true
 
 var is_on_floor : bool = true
 var is_teleporting : bool = false
@@ -258,8 +259,9 @@ func _physics_process(delta):
 				can_teleport = false
 				color = cant_teleport_color
 
-			# check our axis to see if we need to rotate
-			teleport_rotation += (delta * controller.get_joystick_axis(
+			if rotation_with_sticks:
+				# check our axis to see if we need to rotate
+				teleport_rotation += (delta * controller.get_joystick_axis(
 					XRTools.Axis.VR_PRIMARY_X_AXIS) * -4.0)
 
 			# update target and colour
