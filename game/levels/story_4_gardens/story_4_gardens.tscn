@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
+[ext_resource path="res://addons/freesound.org/607407__colorscrimsontears__fanfare-3-rpg.wav" type="AudioStream" id=1]
 [ext_resource path="res://game/level_maps/gardens/gardens.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/levels/level_base.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/level_maps/gardens/parts/plant_chest_1.tscn" type="PackedScene" id=4]
@@ -34,10 +35,14 @@ stream = ExtResource( 8 )
 autoplay = true
 bus = "Music"
 
-[node name="ARVROrigin" parent="." index="2"]
+[node name="FinaleMusicPlayer" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource( 1 )
+bus = "Music"
+
+[node name="ARVROrigin" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24 )
 
-[node name="Gardens" parent="." index="3" instance=ExtResource( 2 )]
+[node name="Gardens" parent="." index="4" instance=ExtResource( 2 )]
 
 [node name="PlantChest1" parent="Gardens/Structure/Garden1" index="1" instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.9, 0, 0 )
@@ -171,7 +176,7 @@ initial_object = NodePath("Plant2Rotten")
 
 [node name="Plant2Rotten" parent="Gardens/Structure/Garden4/SnapZone6" index="2" instance=ExtResource( 7 )]
 
-[node name="ComputerAIEntrance" parent="." index="4" instance=ExtResource( 9 )]
+[node name="ComputerAIEntrance" parent="." index="5" instance=ExtResource( 9 )]
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 1.2, 0.08, 18.5 )
 audio_streams = [ ExtResource( 12 ) ]
 
@@ -183,7 +188,7 @@ computer_ai_path = NodePath("..")
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.900846, 0 )
 shape = SubResource( 1 )
 
-[node name="ComputerAIMiddle" parent="." index="5" instance=ExtResource( 9 )]
+[node name="ComputerAIMiddle" parent="." index="6" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, 0 )
 audio_streams = [ ExtResource( 13 ), ExtResource( 14 ) ]
 face_visible = false
@@ -196,7 +201,7 @@ computer_ai_path = NodePath("..")
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.413467, 0 )
 shape = SubResource( 1 )
 
-[node name="ExitToCreditsA" parent="." index="6" instance=ExtResource( 15 )]
+[node name="ExitToCreditsA" parent="." index="7" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24.2467 )
 zone_scene = "res://game/levels/credits/credits.tscn"
 enable = false
@@ -204,7 +209,7 @@ enable = false
 [node name="CollisionShape" type="CollisionShape" parent="ExitToCreditsA" index="0"]
 shape = SubResource( 2 )
 
-[node name="ExitToCreditsB" parent="." index="7" instance=ExtResource( 15 )]
+[node name="ExitToCreditsB" parent="." index="8" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24.0964 )
 zone_scene = "res://game/levels/credits/credits.tscn"
 enable = false

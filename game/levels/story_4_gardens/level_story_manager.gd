@@ -3,6 +3,13 @@ extends Node
 
 onready var computer_ai = $"../ComputerAIMiddle"
 
+onready var ai_speech_trigger_instruction = $"../ComputerAIEntrance/AiSpeechTriggerInstruction"
+onready var ai_speech_trigger_back_for_help = $"../ComputerAIMiddle/AiSpeechTriggerBackForHelp"
+
+onready var music_player = $"../MusicPlayer"
+onready var finale_music_player = $"../FinaleMusicPlayer"
+
+
 onready var gardens = $"../Gardens"
 
 onready var exit_to_credits_a = $"../ExitToCreditsA"
@@ -54,6 +61,21 @@ func _maybe_completed():
 
 	_mission_complete = true
 	emit_signal("completed_mission")
+	
+	 # don't wanna interrupt the final message!
+	ai_speech_trigger_instruction.enabled = false
+	ai_speech_trigger_back_for_help.enabled = false
+
+	computer_ai.play_line(-1, ComputerAiNpc.Faces.Humming)
+	
+	# Play Horaay Music
+	music_player.stop()
+	finale_music_player.play()
+	
+	# Wait a sec
+	yield(get_tree().create_timer(3), "timeout")
+	
+	# Play final message
 	computer_ai.play_line(1, ComputerAiNpc.Faces.Talk)
 	computer_ai.connect("finished_talking", self, "_on_enable_exit", [], CONNECT_ONESHOT)
 
