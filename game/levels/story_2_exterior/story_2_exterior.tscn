@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://game/level_maps/exterior_ship/exterior_ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/levels/level_base.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/godot-xr-tools/functions/movement_wall_walk.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/audio/voice/ai-good.ogg" type="AudioStream" id=4]
 [ext_resource path="res://game/levels/story_2_exterior/good_modules.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/objects/computer_ai/computer_ai.tscn" type="PackedScene" id=6]
 [ext_resource path="res://game/objects/zone_switch_area.tscn" type="PackedScene" id=7]
@@ -16,6 +17,7 @@
 [ext_resource path="res://addons/freepd.com/Space Ambience.mp3" type="AudioStream" id=15]
 [ext_resource path="res://addons/freesound.org/585801__colorscrimsontears__time-travel-future.wav" type="AudioStream" id=16]
 [ext_resource path="res://addons/freesound.org/256519__kodack__mask-breathing-sound-highpassed.wav" type="AudioStream" id=17]
+[ext_resource path="res://game/level_maps/exterior_ship/parts/teleport/teleport.tscn" type="PackedScene" id=18]
 
 [sub_resource type="SphereShape" id=2]
 radius = 2.07904
@@ -28,6 +30,9 @@ extents = Vector3( 1.94998, 1.59439, 2.95915 )
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1.70405, 1.68634, 1.76804 )
+
+[sub_resource type="CylinderShape" id=5]
+radius = 0.75
 
 [node name="Story2Exterior" instance=ExtResource( 2 )]
 
@@ -77,7 +82,7 @@ play_first_audio_at_start = true
 
 [node name="ComputerAIMidway" parent="." index="9" instance=ExtResource( 6 )]
 transform = Transform( -0.671382, 0.52721, -0.520861, -0.635923, -0.0488982, 0.770202, 0.380589, 0.848327, 0.368094, 6.947, -30.5, 8.06 )
-audio_streams = [ ExtResource( 11 ) ]
+audio_streams = [ ExtResource( 11 ), ExtResource( 4 ) ]
 
 [node name="AiSpeechTriggerStart" parent="ComputerAIMidway" index="3" instance=ExtResource( 14 )]
 transform = Transform( -0.671382, -0.635923, 0.380589, 0.52721, -0.0488982, 0.848327, -0.520861, 0.770202, 0.368094, -11.1814, -1.30077, 17.0338 )
@@ -90,7 +95,7 @@ shape = SubResource( 2 )
 [node name="AiSpeechTriggerStop" parent="ComputerAIMidway" index="4" instance=ExtResource( 14 )]
 transform = Transform( -0.671382, -0.635923, 0.380589, 0.52721, -0.0488983, 0.848327, -0.520861, 0.770202, 0.368094, 1.05905, -0.359572, 2.20872 )
 computer_ai_path = NodePath("..")
-voice_line_on_enter = -1
+voice_line_on_enter = 1
 face_on_enter = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="ComputerAIMidway/AiSpeechTriggerStop" index="0"]
@@ -131,5 +136,18 @@ enable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="ZoneSwitchArea" index="0"]
 shape = SubResource( 1 )
+
+[node name="ZoneSwitchArea2" parent="." index="13" instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 8.63658, -53.6139, 0 )
+zone_scene = "res://game/levels/story_3_quarters/story_3_quarters.tscn"
+enable = false
+
+[node name="Teleport" parent="ZoneSwitchArea2" index="0" instance=ExtResource( 18 )]
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0 )
+enable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="ZoneSwitchArea2" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03855, 0 )
+shape = SubResource( 5 )
 
 [connection signal="all_modules_good" from="GoodModules" to="LevelStoryManager" method="_on_GoodModules_all_modules_good"]

@@ -6,6 +6,10 @@ onready var victory_audio := $"../ComputerAIRepairStation/VictoryAudio"
 
 onready var computer_ai_repair_station : ComputerAiNpc = $"../ComputerAIRepairStation"
 
+onready var zone_switch_teleport_area = $"../ZoneSwitchArea2"
+
+onready var teleport = $"../ZoneSwitchArea2/Teleport"
+
 
 export var victory_computer_ai_line := 1
 
@@ -21,4 +25,6 @@ func _on_GoodModules_all_modules_good():
 
 func _on_victory_finished():
 	computer_ai_repair_station.play_line(victory_computer_ai_line, ComputerAiNpc.Faces.Talk)
+	zone_switch_teleport_area.enable = true
+	teleport.enable = true
 

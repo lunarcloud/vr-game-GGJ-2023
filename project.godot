@@ -333,6 +333,11 @@ _global_script_classes=[ {
 "class": "XRToolsWindArea",
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/objects/wind_area.gd"
+}, {
+"base": "Area",
+"class": "ZoneSwitchArea",
+"language": "GDScript",
+"path": "res://game/objects/zone_switch_area.gd"
 } ]
 _global_script_class_icons={
 "ARVRHelpers": "",
@@ -399,7 +404,8 @@ _global_script_class_icons={
 "XRToolsVelocityAveragerLinear": "",
 "XRToolsVignette": "",
 "XRToolsVirtualKeyboard2D": "",
-"XRToolsWindArea": ""
+"XRToolsWindArea": "",
+"ZoneSwitchArea": ""
 }
 
 [application]

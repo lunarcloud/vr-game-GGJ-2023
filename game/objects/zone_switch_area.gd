@@ -1,4 +1,5 @@
 tool
+class_name ZoneSwitchArea
 extends Area
 
 
@@ -29,3 +30,8 @@ func _on_body_entered(body : Spatial):
 		scene_base.reset_scene()
 	else:
 		scene_base.load_scene(zone_scene)
+
+
+# Add support for is_class
+func is_class(name : String) -> bool:
+	return name == "ZoneSwitchArea" or .is_class(name)
